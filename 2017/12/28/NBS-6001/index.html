@@ -7,12 +7,76 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="tags:NBS-6001 主机  工程师调试手册  准备工作 系统 APP 电脑端浏览器 辅助调试工具   登录主机 配置系统 设置主机基本参数 主机名称 城市选择 IP 地址修改 串口配置 RTC 时间设置   添加区域及设备 添加全局场景 添加规则 系统管理 数据管理 系统升级 二维码     附录 关于 App 绑定主机及用户权限 如何快速获取主机的 IP 地址 通用方法 特殊方法">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/28/NBS-6001/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="tags:NBS-6001 主机  工程师调试手册  准备工作 系统 APP 电脑端浏览器 辅助调试工具   登录主机 配置系统 设置主机基本参数 主机名称 城市选择 IP 地址修改 串口配置 RTC 时间设置   添加区域及设备 添加全局场景 添加规则 系统管理 数据管理 系统升级 二维码     附录 关于 App 绑定主机及用户权限 如何快速获取主机的 IP 地址 通用方法 特殊方法">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/applogo.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/chrome.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/ie.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/firefox.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/safari.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/fing.jpeg">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webLogin.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webHome.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/setName.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appChose.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/setCity.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appWeather.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/setIP.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/setSerial.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/setTime.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webZone.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/zoneDefault.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appZone.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/zoneUD.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appZone-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appService.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appSensor.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appLight.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appShade.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appHVAC.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appCamera.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appGeneric.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appWuye.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appHome.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webScene.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appSiri.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webScene-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webRule.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webData.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webHeader.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/dataSave.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/dataRestore.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appHome.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appHome-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appHome-3.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/dataPic.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/dataClear.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webHeader.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/dataUpdate.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/dataUpdate-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/webQR.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdd.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdd-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdd-3.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdd-4.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdd-5.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdd-6.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdd-7.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appSetting.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdmin.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/appAdmin-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/AppScan.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/AppScan_Cloud.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/BashScan.png">
+<meta property="og:updated_time" content="2017-12-28T10:44:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="tags:NBS-6001 主机  工程师调试手册  准备工作 系统 APP 电脑端浏览器 辅助调试工具   登录主机 配置系统 设置主机基本参数 主机名称 城市选择 IP 地址修改 串口配置 RTC 时间设置   添加区域及设备 添加全局场景 添加规则 系统管理 数据管理 系统升级 二维码     附录 关于 App 绑定主机及用户权限 如何快速获取主机的 IP 地址 通用方法 特殊方法">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/28/NBS-6001/img/applogo.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +123,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-NBS-6001" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-NBS-6001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/28/NBS-6001/" class="article-date">
   <time datetime="2017-12-28T10:43:08.000Z" itemprop="datePublished">2017-12-28</time>
@@ -527,247 +589,19 @@ NewBest 蜂巢系列主机内置 WebServer，调试工程师无需安装调试�
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/28/test/" class="article-date">
-  <time datetime="2017-12-28T10:18:02.000Z" itemprop="datePublished">2017-12-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/28/test/">ReadMe</a>
-    </h1>
+    <a href="/2017/12/28/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">ReadMe</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="关于支持的设备"><a href="#关于支持的设备" class="headerlink" title="关于支持的设备"></a>关于支持的设备</h4><p>目前网关支持对：灯光、窗帘、空调、地暖、电视、投影仪、场景，八种类型设备的控制。</p>
-<h4 id="关于-esf-文件导入"><a href="#关于-esf-文件导入" class="headerlink" title="关于 .esf 文件导入"></a>关于 .esf 文件导入</h4><p>ETS 调试软件中可以将 EIB 系统配置以 .esf 格式导出，该文件可以直接导入网关配置使用。
-要求 EIB 系统工程师配置 ETS 程序时，对组地址的命名服从以下几点要求：</p>
-<ul>
-<li>设备单控地址命名按照：设备名称/[$类型]/[$功能]，类型和功能需要满足下表。
-<code>填写示例：客厅吊灯/light/switch</code></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>真实类型</th>
-<th>[$类型]</th>
-<th>[$功能]</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>灯光-开关</td>
-<td>light</td>
-<td>switch</td>
-</tr>
-<tr>
-<td>灯光-亮度增减</td>
-<td>light</td>
-<td>dim</td>
-</tr>
-<tr>
-<td>灯光-调光</td>
-<td>light</td>
-<td>value</td>
-</tr>
-<tr>
-<td>窗帘-移动</td>
-<td>curtain</td>
-<td>move</td>
-</tr>
-<tr>
-<td>窗帘-停止</td>
-<td>curtain</td>
-<td>stop</td>
-</tr>
-<tr>
-<td>空调-开关</td>
-<td>ac</td>
-<td>switch</td>
-</tr>
-<tr>
-<td>空调-设定温度</td>
-<td>ac</td>
-<td>settemp</td>
-<td></td>
-</tr>
-<tr>
-<td>空调-风速</td>
-<td>ac</td>
-<td>fanspeed</td>
-</tr>
-<tr>
-<td>空调-模式</td>
-<td>ac</td>
-<td>mode</td>
-</tr>
-<tr>
-<td>地暖-开关</td>
-<td>heater</td>
-<td>switch</td>
-</tr>
-<tr>
-<td>地暖-设定温度</td>
-<td>heater</td>
-<td>settemp</td>
-</tr>
-<tr>
-<td>电视</td>
-<td>tv</td>
-<td>switch</td>
-</tr>
-<tr>
-<td>投影仪</td>
-<td>projector</td>
-<td>switch</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>场景地址命名按照：区域/scene/#,#,#，其中&lt;#,#,#&gt;部分填写该组地址下启用的
-场景号，不同的场景号会自动转化为场景名称，对应关系如下表。
-<code>填写示例：客厅/scene/1,2,3,4,5</code></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">ID</th>
-<th style="text-align:center">转换后的场景名称</th>
-<th style="text-align:center">ID</th>
-<th style="text-align:center">转换后的场景名称</th>
-<th style="text-align:center">ID</th>
-<th style="text-align:center">转换后的场景名称</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">全开模式</td>
-<td style="text-align:center">7</td>
-<td style="text-align:center">睡眠模式</td>
-<td style="text-align:center">13</td>
-<td style="text-align:center">洗漱模式</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">起夜模式</td>
-<td style="text-align:center">8</td>
-<td style="text-align:center">全关模式</td>
-<td style="text-align:center">14</td>
-<td style="text-align:center">淋浴模式</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">影音模式</td>
-<td style="text-align:center">9</td>
-<td style="text-align:center">浪漫模式</td>
-<td style="text-align:center">15</td>
-<td style="text-align:center">回家模式</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">会客模式</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">阅读模式</td>
-<td style="text-align:center">16</td>
-<td style="text-align:center">离家模式</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">就餐模式</td>
-<td style="text-align:center">11</td>
-<td style="text-align:center">节能模式</td>
-<td style="text-align:center">17</td>
-<td style="text-align:center">度假模式</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">温馨模式</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">聚会模式</td>
-<td style="text-align:center">18</td>
-<td style="text-align:center">SPA模式</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>状态地址命名按照：服从”设备单控地址命名”，但需前缀”status/“。
-<code>填写示例：status/客厅吊灯/light/switch</code></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/28/test/" data-id="cjbqd3zmv00012gpww7y4kxci" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/12/28/hello-world/" class="article-date">
-  <time datetime="2017-12-28T08:50:12.000Z" itemprop="datePublished">2017-12-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/28/hello-world/" data-id="cjbqd3zmi00002gpwswww6aq2" class="article-share-link">Teilen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
