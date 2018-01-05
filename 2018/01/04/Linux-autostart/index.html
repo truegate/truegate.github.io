@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程。规避了 init.d 的诸多不变，已成为众多 L">
+<meta name="description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。 配置文件位">
 <meta name="keywords" content="linux service">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 开机自启程序">
 <meta property="og:url" content="http://yoursite.com/2018/01/04/Linux-autostart/index.html">
 <meta property="og:site_name" content="年华易逝 活在当下">
-<meta property="og:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程。规避了 init.d 的诸多不变，已成为众多 L">
+<meta property="og:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。 配置文件位">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-05T05:17:45.000Z">
+<meta property="og:updated_time" content="2018-01-05T05:19:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 开机自启程序">
-<meta name="twitter:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程。规避了 init.d 的诸多不变，已成为众多 L">
+<meta name="twitter:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。 配置文件位">
 
 
 
@@ -371,7 +371,7 @@
 <ul>
 <li><code>OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8</code></li>
 </ul>
-<h2 id="方法一：借助-systemd-工具管理"><a href="#方法一：借助-systemd-工具管理" class="headerlink" title="方法一：借助 systemd 工具管理"></a>方法一：借助 systemd 工具管理</h2><p>systemd 是一款 Linux 系统工具，用来启动守护进程。规避了 <code>init.d</code> 的诸多不变，已成为众多 Linux 的标准配置。</p>
+<h2 id="方法一：借助-systemd-工具管理"><a href="#方法一：借助-systemd-工具管理" class="headerlink" title="方法一：借助 systemd 工具管理"></a>方法一：借助 systemd 工具管理</h2><p>systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。</p>
 <p>配置文件位于 <code>/etc/systemd/</code> 路径下。具体参阅：</p>
 <ul>
 <li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">Systemd 入门教程：命令篇 / 阮一峰</a></li>
