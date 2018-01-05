@@ -375,7 +375,12 @@
 <ul>
 <li><code>OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8</code></li>
 </ul>
-<h2 id="方法一：借助-systemct-工具管理"><a href="#方法一：借助-systemct-工具管理" class="headerlink" title="方法一：借助 systemct 工具管理"></a>方法一：借助 systemct 工具管理</h2><h2 id="方法二：借助-init-d-实现"><a href="#方法二：借助-init-d-实现" class="headerlink" title="方法二：借助 init.d 实现"></a>方法二：借助 init.d 实现</h2><p><code>init.d</code> 目录维护了系统的诸多初始化服务，具体参阅：</p>
+<h2 id="方法一：借助-systemd-工具管理"><a href="#方法一：借助-systemd-工具管理" class="headerlink" title="方法一：借助 systemd 工具管理"></a>方法一：借助 systemd 工具管理</h2><p>systemd 是一款 Linux 系统工具，用来启动守护进程。规避了 <code>init.d</code> 的诸多不变，已成为众多 Linux 的标准配置。</p>
+<p>配置文件位于 <code>/etc/systemd/</code> 路径下。具体参阅：</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">Systemd 入门教程：命令篇 / 阮一峰</a></li>
+</ul>
+<h2 id="方法二：借助-init-d-实现"><a href="#方法二：借助-init-d-实现" class="headerlink" title="方法二：借助 init.d 实现"></a>方法二：借助 init.d 实现</h2><p><code>/etc/init.d/</code> 目录维护了系统的诸多初始化服务，具体参阅：</p>
 <ul>
 <li><p><a href="http://manpages.ubuntu.com/manpages/xenial/man8/update-rc.d.8.html">Update-rc.d - install and remove System-V style init script links</a> </p>
 </li>
