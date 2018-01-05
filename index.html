@@ -380,14 +380,27 @@
 <ul>
 <li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">Systemd 入门教程：命令篇 / 阮一峰</a></li>
 </ul>
-<h2 id="方法二：借助-init-d-实现"><a href="#方法二：借助-init-d-实现" class="headerlink" title="方法二：借助 init.d 实现"></a>方法二：借助 init.d 实现</h2><p><code>/etc/init.d/</code> 目录维护了系统的诸多初始化服务，具体参阅：</p>
+<p><strong>简单实现 systemd 管理的过程方法</strong></p>
+<p><strong>第一步 创建 .service 文件</strong>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/systemd/system/[name].serveice</span><br></pre></td></tr></table></figure></p>
+<p>样例如下，实现目的是确保 Network Ready 后再启动目标进程
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Run after network</span><br><span class="line">After=network.target multi-user.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">ExecStart=/home/order</span><br><span class="line">ExecReload=/home/order</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>[Unit] 中 <code>After</code> 定义了启动顺序，可以通过 <code>systemd-analyze critical-chain</code> 来确定具体的内容；</li>
+<li>[Service] 中 <code>ExecStart / ExecReload</code> 定义了服务所调取的脚本。</li>
+</ul>
+</blockquote>
+<p><strong>第二步 激活 .service 文件</strong>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> [name].serveice</span><br><span class="line">$ systemctl daemon-reload</span><br></pre></td></tr></table></figure></p>
+<h2 id="方法二：借助-init-d-实现"><a href="#方法二：借助-init-d-实现" class="headerlink" title="方法二：借助 init.d 实现"></a>方法二：借助 init.d 实现</h2><p>init 进程是 Linux 历史悠久的进程启动方式，系统的 <code>/etc/init.d/</code> 目录维护初始化服务，具体可以参阅：</p>
 <ul>
 <li><p><a href="http://manpages.ubuntu.com/manpages/xenial/man8/update-rc.d.8.html">Update-rc.d - install and remove System-V style init script links</a> </p>
 </li>
 <li><p><a href="https://wiki.debian.org/LSBInitScripts">LSBInitScripts</a> </p>
 </li>
 </ul>
-<p><strong>详细步骤</strong></p>
+<p><strong>实现 init.d 服务管理的过程方法</strong></p>
 <p><strong>第一步 创建 service 文件</strong>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/init.d/homebase  <span class="comment"># Fedora系统目录路径在 /etc/rc.d/init.d/</span></span><br></pre></td></tr></table></figure></p>
 <p>内容如下，<code>Required-Start</code> 项指明了启动前置条件</p>
