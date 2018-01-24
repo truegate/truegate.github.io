@@ -8,6 +8,11 @@ date: 2018-01-04 20:10:05
 keywords: ip
 ---
 
+在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行，
+**本文将分享 Python 获取本机 IP 的方法**
+
+<!-- more -->
+
 > 在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行，
 > 本文将分享 Python 获取本机 IP 的方法
 

@@ -8,6 +8,10 @@ date: 2018-01-16 18:03:03
 keywords: getcwd
 ---
 
+通过 `import os` ，使用 `os.path.abspath(os.path.dirname(__file__))` 获取绝对路径。
+
+<!-- more -->
+
 在工程项目的 `config.py` 中往往需要获取项目路径。
 
 > 结论：通过 `import os` ，使用 `os.path.abspath(os.path.dirname(__file__))` 获取绝对路径。
