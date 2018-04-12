@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="年华易逝 活在当下">
 <meta property="og:description" content="计算Amazon EC2 安全并且可以调整大小的云计算容量  Amazon Elastic Compute Cloud 是一种 Web 服务，可以在云中提供安全并且可以调整大小的计算容量。 突出特点 弹性 WEB 规模级计算：客户可以在几分钟内增、减容量；可以同时管理数百个甚至数千个服务器实例； 完全被客户控制的实例 灵活：有多种实例类型、操作系统、软件包可供选择 集成：可与大多数 AWS 服务集">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-11T04:23:46.000Z">
+<meta property="og:updated_time" content="2018-04-12T08:57:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探AWS">
 <meta name="twitter:description" content="计算Amazon EC2 安全并且可以调整大小的云计算容量  Amazon Elastic Compute Cloud 是一种 Web 服务，可以在云中提供安全并且可以调整大小的计算容量。 突出特点 弹性 WEB 规模级计算：客户可以在几分钟内增、减容量；可以同时管理数百个甚至数千个服务器实例； 完全被客户控制的实例 灵活：有多种实例类型、操作系统、软件包可供选择 集成：可与大多数 AWS 服务集">
@@ -400,11 +400,551 @@
 <li>规模效应：几秒钟就能启动数十个或者数万个 Docker 容器，同时不增加额外的复杂性。</li>
 <li>与其他 AWS 服务配合使用：与以下 AWS 服务集成，为客户提供可以运行多种容器化应用程序或服务的完整解决方案：Elastic Load Balancing、Amazon VPC、AWS IAM、Amazon ECR、AWS Batch、Amazon CloudWatch、AWS CloudFormation、AWS CodeStar 和 AWS CloudTrail。</li>
 </ul>
+<h3 id="典型应用场景"><a href="#典型应用场景" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>微服务</li>
+<li>批处理</li>
+<li>将应用程序迁移到云</li>
+<li>机器学习</li>
+</ul>
+<h2 id="Amazon-Elastic-Container-Registry-（Amazon-ECR"><a href="#Amazon-Elastic-Container-Registry-（Amazon-ECR" class="headerlink" title="Amazon Elastic Container Registry （Amazon ECR)"></a>Amazon Elastic Container Registry （Amazon ECR)</h2><blockquote>
+<p>存储和检索 Docker 镜像</p>
+</blockquote>
+<p>ECR 是完全托管的 Docker 容器注册表，可使开发人员轻松存储、管理和部署 Docker 容器映像。Amazon ECR 与 Amazon ECS 集成，大大简化生产工作流程的开发。ECR 没有预付费用或长期合约，只需为存储库中存储的数据量以及传输到 Internet 的数据量付费。</p>
+<h3 id="突出特点-3"><a href="#突出特点-3" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>完全托管并且高度可用：不再需要为支持容器注册表而运营和扩展基础设施。无需安装和管理任何软件，也无需扩展基础设施。只需将您的容器映像放入 Amazon ECR，然后在需要部署时再取回该映像即可。 ECR 具有冗余、持久且高度可扩展的架构。您的容器映像高度可用且可访问，这使您能够为应用程序可靠部署新的容器。</li>
+</ul>
 <h2 id="Amazon-Elastic-Container-Service-for-Kubernetes-Amazon-EKS"><a href="#Amazon-Elastic-Container-Service-for-Kubernetes-Amazon-EKS" class="headerlink" title="Amazon Elastic Container Service for Kubernetes (Amazon EKS)"></a>Amazon Elastic Container Service for Kubernetes (Amazon EKS)</h2><blockquote>
 <p>高度可用并可以扩展的 K8S 服务</p>
 </blockquote>
-<p>Kubernetes 是一种开源系统，用于自动化部署、扩展和管理容器化应用程序。Amazon EKS 可在三个可用区中运行三个 Kubernetes 主节点，从而确保了高可用性。Amazon EKS 可以自动检测和替换运行状况不佳的主节点，并对主节点进行自动版本升级和修补。</p>
-<h1 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h1><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h1 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h1><h1 id="网络和内容分发"><a href="#网络和内容分发" class="headerlink" title="网络和内容分发"></a>网络和内容分发</h1><h1 id="开发人员工具"><a href="#开发人员工具" class="headerlink" title="开发人员工具"></a>开发人员工具</h1><h1 id="管理工具"><a href="#管理工具" class="headerlink" title="管理工具"></a>管理工具</h1><h1 id="媒体服务"><a href="#媒体服务" class="headerlink" title="媒体服务"></a>媒体服务</h1><h1 id="安全性、身份与合规性"><a href="#安全性、身份与合规性" class="headerlink" title="安全性、身份与合规性"></a>安全性、身份与合规性</h1><h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h1 id="移动服务"><a href="#移动服务" class="headerlink" title="移动服务"></a>移动服务</h1><h1 id="AR-和-VR"><a href="#AR-和-VR" class="headerlink" title="AR 和 VR"></a>AR 和 VR</h1><h1 id="应用程序集成"><a href="#应用程序集成" class="headerlink" title="应用程序集成"></a>应用程序集成</h1><h1 id="客户参与"><a href="#客户参与" class="headerlink" title="客户参与"></a>客户参与</h1><h1 id="企业生产力"><a href="#企业生产力" class="headerlink" title="企业生产力"></a>企业生产力</h1><h1 id="桌面和应用程序流式处理"><a href="#桌面和应用程序流式处理" class="headerlink" title="桌面和应用程序流式处理"></a>桌面和应用程序流式处理</h1><h1 id="物联网"><a href="#物联网" class="headerlink" title="物联网"></a>物联网</h1><h1 id="游戏开发"><a href="#游戏开发" class="headerlink" title="游戏开发"></a>游戏开发</h1>
+<p>Amazon EKS 可在三个可用区中运行三个 Kubernetes 主节点，从而确保了高可用性。Amazon EKS 可以自动检测和替换运行状况不佳的主节点，并对主节点进行自动版本升级和修补。</p>
+<h3 id="突出特点-4"><a href="#突出特点-4" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>完全托管并且高度可用：K8S 由工作程序节点和主节点两部分组成。工作程序节点是运行容器的服务器，而主节点控制工作程序节点的群集，并对容器进行规划并将其放置在特定的服务器上。Amazon EKS 可以针对每个群集自动运行和管理三个 K8S 主节点，让客户可以轻松运行高度可用的 K8S 群集。Amazon EKS 管理的多可用区架构可以在一个 AWS 可用区丢失时保证弹性。Amazon EKS 还可以自动检测和替换运行状况不佳的主节点，并对主节点进行自动版本升级和修补。</li>
+</ul>
+<h3 id="典型应用场景-1"><a href="#典型应用场景-1" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>微服务</li>
+<li>批处理</li>
+<li>混合容器部署</li>
+<li>机器学习</li>
+</ul>
+<h2 id="Amazon-Lightsail"><a href="#Amazon-Lightsail" class="headerlink" title="Amazon Lightsail"></a>Amazon Lightsail</h2><blockquote>
+<p>启动和管理虚拟专用服务器</p>
+</blockquote>
+<h3 id="突出特点-5"><a href="#突出特点-5" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>便宜的VPS</li>
+</ul>
+<h2 id="AWS-Batch"><a href="#AWS-Batch" class="headerlink" title="AWS Batch"></a>AWS Batch</h2><blockquote>
+<p>任意规模的完全托管式批处理。简单来说，Batch 是可以预定义执行任务所需的计算机资源，然后在任务触发时能够自动创建对应的实例。</p>
+</blockquote>
+<p>AWS Batch 可根据提交的批处理任务的数量和特定资源要求，动态预置计算资源 (CPU 或 内存优化型实例) 的最佳数量和类型。借助 AWS Batch，无需安装和管理运行您的任务所使用的批处理计算软件或服务器群集，从而使您能够专注于分析结果和解决问题。AWS Batch 可以跨多种 AWS 计算服务和功能 (如 Amazon EC2 和竞价型实例) 计划、安排和执行您的批处理计算工作负载。
+AWS Batch 不收取任何额外费用。只需为存储和运行您的批处理任务而创建的 AWS 资源 (如 EC2 实例) 付费。</p>
+<h3 id="突出特点-6"><a href="#突出特点-6" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>完全托管：AWS Batch 可为客户管理所有基础设施，从而避免了预置、管理、监控和扩展批处理计算任务所带来的复杂性。</li>
+<li>与 AWS 集成</li>
+<li>成本优化的资源预置</li>
+</ul>
+<h3 id="典型应用场景-2"><a href="#典型应用场景-2" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>金融服务-交易后分析：自动分析每天的交易费用、执行报告和市场绩效</li>
+<li>数字媒体-视觉效果呈现：自动处理内容呈现工作负载，并通过执行依赖关系或资源排程降低人为干预的必要性。</li>
+</ul>
+<h2 id="AWS-Elastic-Beanstalk"><a href="#AWS-Elastic-Beanstalk" class="headerlink" title="AWS Elastic Beanstalk"></a>AWS Elastic Beanstalk</h2><blockquote>
+<p>运行和管理 Web 应用
+在熟悉的服务器（例如 Apache 、Nginx、Passenger 和 IIS）上部署和扩展使用 Java、.NET、PHP、Node.js、Python、Ruby、GO 和 Docker 开发的 Web 应用程序和服务。</p>
+</blockquote>
+<h3 id="突出特点-7"><a href="#突出特点-7" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>入门快速，使用简单：客户只需上传代码，Elastic Beanstalk 将自动处理容量预配置、负载平衡、自动扩展及应用程序运行状况监控等部署详细信息。几分钟内，您的应用程序即可使用，无需您处理任何基础设施或资源配置工作。</li>
+<li>开发人员生产力：客户只需集中精力编写代码，其他管理和配置服务器、数据库、加载平衡器、防火墙和网络等工作交由 Elastic Beanstalk 代劳。</li>
+<li>无限扩展：Elastic Beanstalk 会根据应用程序的具体需求使用可以轻松调整的 Auto Scaling 设置自动对其进行扩缩。</li>
+<li>完善的资源控制： 使用Elastic Beanstalk，可以实施对 AWS 资源的“彻底检查”，并保留对应用程序所需 AWS 资源的完全控制。</li>
+</ul>
+<h2 id="AWS-Fargate"><a href="#AWS-Fargate" class="headerlink" title="AWS Fargate"></a>AWS Fargate</h2><blockquote>
+<p>无需管理服务器或集群即可运行容器</p>
+</blockquote>
+<p>AWS Fargate 是一项适用于 Amazon ECS 和 EKS 的技术，让您无需管理服务器或集群即可运行容器。使用 AWS Fargate，您不必再预置、配置和扩展虚拟机集群即可运行容器，客户可以专注于设计和构建应用程序，而不是管理运行应用程序的基础设施。</p>
+<h3 id="突出特点-8"><a href="#突出特点-8" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>无需管理集群</li>
+<li>无缝扩展</li>
+<li>与 ECS/EKS 集成</li>
+</ul>
+<h2 id="AWS-Lambda"><a href="#AWS-Lambda" class="headerlink" title="AWS Lambda"></a>AWS Lambda</h2><blockquote>
+<p>运行代码，无需顾虑服务器，只需按使用时间付费</p>
+</blockquote>
+<p>借助 Lambda，您几乎可以为任何类型的应用程序或后端服务运行代码，而且全部无需管理。只需上传您的代码，Lambda 会处理运行和扩展高可用性代码所需的一切工作。您可以将您的代码设置为自动从其他 AWS 服务触发，或者直接从任何 Web 或移动应用程序调用。</p>
+<h3 id="突出特点-9"><a href="#突出特点-9" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>无需管理服务器</li>
+<li>持续扩展</li>
+<li>次秒级计量：使用 AWS Lambda 时，会按代码执行时间 (以每 100 毫秒为单位) 和代码触发次数收费。代码未运行时，无需支付任何费用。</li>
+</ul>
+<h3 id="典型应用场景-3"><a href="#典型应用场景-3" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>数据处理：实时文件处理、实时数据流处理</li>
+<li>后端：IoT后端、移动后端、WEB 应用程序</li>
+</ul>
+<h2 id="AWS-Serverless-Application-Repository"><a href="#AWS-Serverless-Application-Repository" class="headerlink" title="AWS Serverless Application Repository"></a>AWS Serverless Application Repository</h2><blockquote>
+<p>发现、部署和发布无服务器应用程序</p>
+</blockquote>
+<p>借助 AWS Serverless Application Repository，您能够轻松针对常见使用案例 (如 Web 和移动后端、事件和数据处理、日志记录、监控和 IoT 等) 部署示例代码、组件和完整应用程序。每个应用程序均使用 AWS 无服务器应用程序模型 (SAM) 模板打包，该模板定义了所使用的 AWS 资源。公开分享的应用程序还包括指向应用程序源代码的链接。使用 Serverless Application Repository 不会产生额外费用，您只需为您部署的应用程序中使用的 AWS 资源付费。</p>
+<h2 id="VMware-Cloud-on-AWS"><a href="#VMware-Cloud-on-AWS" class="headerlink" title="VMware Cloud on AWS"></a>VMware Cloud on AWS</h2><blockquote>
+<p>将 VMware 环境迁移和扩展到 AWS 云
+借助 VMware Cloud on AWS，组织可以在本地数据中心和 AWS 云中使用相同的 VMware Cloud Foundation 技术（包括 vSphere、vSAN、NSX 和 vCenter Server），无需购买任何新硬件或自定义硬件、重写应用程序或修改操作模式，从而实现对混合 IT 操作的简化。</p>
+</blockquote>
+<h1 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h1><h2 id="S3"><a href="#S3" class="headerlink" title="S3"></a>S3</h2><blockquote>
+<p>专为从任意位置存储和检索任意数量的数据而构建的对象存储</p>
+</blockquote>
+<h2 id="Amazon-Elastic-Block-Store-EBS"><a href="#Amazon-Elastic-Block-Store-EBS" class="headerlink" title="Amazon Elastic Block Store(EBS)"></a>Amazon Elastic Block Store(EBS)</h2><blockquote>
+<p>提供用于 EC2 实例的持久性块存储卷</p>
+<h3 id="典型应用场景-4"><a href="#典型应用场景-4" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><p>EBS 设计用于优化性能、成本和容量即可受益的应用程序工作负载。</p>
+<ul>
+<li>大数据分析引擎 (如 Hadoop/HDFS 生态系统和 Amazon EMR 群集)</li>
+<li>关系和非关系型数据库 (如 Microsoft SQL Server 和 MySQL 或 Cassandra 和 MongoDB)</li>
+<li>流和日志处理应用程序 (如 Kafka 和 Splunk)</li>
+<li>数据仓库应用程序 (如 Vertica 和 Teradata)</li>
+</ul>
+</blockquote>
+<h2 id="Amazon-Elastic-File-System-EFS"><a href="#Amazon-Elastic-File-System-EFS" class="headerlink" title="Amazon Elastic File System(EFS)"></a>Amazon Elastic File System(EFS)</h2><blockquote>
+<p>可靠且可扩展的弹性文件存储</p>
+<h3 id="典型应用场景-5"><a href="#典型应用场景-5" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><p>EFS 是一项区域性服务，专为实现高可用性和耐久性而设计，支持各种使用案例，包括</p>
+<ul>
+<li>Web 服务和内容管理</li>
+<li>企业应用程序</li>
+<li>媒体和娱乐处理工作流</li>
+<li>主目录</li>
+<li>数据库备份</li>
+<li>开发人员工具</li>
+<li>容器存储</li>
+<li>大数据分析</li>
+</ul>
+</blockquote>
+<pre><code>云存储有三种类型：对象存储、文件存储和数据块存储。每种类型均有独特的优势。
+
+1. 对象存储 – 在云中开发的应用程序通常可利用对象存储的高度可扩展性和元数据特性。Amazon Simple Storage Service (Amazon S3) 等对象存储解决方案非常适合用于从头构建需要扩展和灵活性的现代应用程序；您还可以使用这些解决方案导入现有数据存储以进行分析、备份或存档。
+2. 文件存储 – 许多应用程序需要访问共享文件并需要文件系统。通常使用网络附加存储 (NAS) 服务器支持这种类型的存储。Amazon Elastic File System (EFS) 等文件存储解决方案非常适合大型内容存储库、开发环境、媒体存储或用户主目录等使用案例。
+3. 数据块存储 – 数据库或 ERP 系统等其他企业应用程序通常需要针对每个主机的专用低延迟存储。这种存储与直接连接存储 (DAS) 或存储区域网络 (SAN) 类似。Amazon Elastic Block Store (EBS) 等基于数据块的云存储解决方案使用各个虚拟服务器进行预配置，可提供高性能工作负载所需的超低延迟。
+</code></pre><h2 id="Amazon-Glacier"><a href="#Amazon-Glacier" class="headerlink" title="Amazon Glacier"></a>Amazon Glacier</h2><blockquote>
+<p>安全、耐久且成本极低的长期对象存储</p>
+<h3 id="典型应用场景-6"><a href="#典型应用场景-6" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>媒体资产存档</li>
+<li>医疗信息存档</li>
+<li>法规和合规性存档</li>
+<li>科学数据存储</li>
+<li>数字保留</li>
+<li>取代磁带</li>
+</ul>
+</blockquote>
+<h2 id="Storage-Gateway"><a href="#Storage-Gateway" class="headerlink" title="Storage Gateway"></a>Storage Gateway</h2><blockquote>
+<p>无缝本地集成和优化数据传输的混合云存储</p>
+</blockquote>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="Amazon-Aurora"><a href="#Amazon-Aurora" class="headerlink" title="Amazon Aurora"></a>Amazon Aurora</h2><blockquote>
+<p>兼容 MySQL 和 PostgreSQL 的关系数据库，既具有高端商用数据库的性能和可用性，又具有开源数据库的简单性和成本效益</p>
+<h3 id="突出特点-10"><a href="#突出特点-10" class="headerlink" title="突出特点"></a>突出特点</h3><p>Aurora 的速度最高可以达到标准 MySQL 数据库的五倍、标准 PostgreSQL 数据库的三倍。它可以实现商用数据库的安全性、可用性和可靠性，而成本只有商用数据库的 1/10。</p>
+</blockquote>
+<h2 id="Amazon-Relational-Database-Service-RDS"><a href="#Amazon-Relational-Database-Service-RDS" class="headerlink" title="Amazon Relational Database Service(RDS)"></a>Amazon Relational Database Service(RDS)</h2><blockquote>
+<p>提供六种常用数据库（包括 Amazon Aurora、PostgreSQL、MySQL、MariaDB、Oracle 和 Microsoft SQL Server）引擎的托管关系数据库</p>
+</blockquote>
+<h2 id="DynamoDB"><a href="#DynamoDB" class="headerlink" title="DynamoDB"></a>DynamoDB</h2><blockquote>
+<p>快速灵活的 NoSQL 数据库服务，适合所有需要一致性且延迟低于 10 毫秒的任意规模的应用程序。</p>
+</blockquote>
+<h2 id="Amazon-ElastiCache"><a href="#Amazon-ElastiCache" class="headerlink" title="Amazon ElastiCache"></a>Amazon ElastiCache</h2><blockquote>
+<p>在云中完全托管的内存数据存储和缓存。与 Redis 和 Memcached 兼容。实现亚毫秒级延迟，支持实时应用程序。</p>
+<h3 id="突出特点-11"><a href="#突出特点-11" class="headerlink" title="突出特点"></a>突出特点</h3><p>ElastiCache 支持两种开源的内存引擎：</p>
+<ul>
+<li>Redis：适用于 Redis 的 ElastiCache 具有完全托管、可扩展和安全等特点，是 Web 应用程序、移动应用程序、医疗保健应用程序、金融应用程序、游戏、广告技术和物联网等高性能使用案例的理想之选。</li>
+<li>Memcached： 一种广泛采用的内存对象缓存系统。ElastiCache 与 Memcached 保持协议兼容，因此您当前用于现有 Memcached 环境的常用工具可以无缝应用于该服务。<h3 id="典型应用"><a href="#典型应用" class="headerlink" title="典型应用"></a>典型应用</h3>使用 Amazon ElastiCache，可以显著改进各种应用程序工作负载（例如社交网络、游戏、广告技术、媒体共享和 Q&amp;A 门户）或计算密集型工作负载（例如推荐引擎）的延迟和吞吐量。当用作缓存时，ElastiCache 可存储内存中的关键数据，以便实现低延迟访问，从而提高应用程序的性能。此信息可能包括 I/O 密集型数据库查询的结果或计算密集型计算的结果。对于需要快速内存数据结构服务器的应用程序、高度可用的缓存或消息代理而言，Redis 则最为有用。</li>
+</ul>
+</blockquote>
+<h2 id="Redshift"><a href="#Redshift" class="headerlink" title="Redshift"></a>Redshift</h2><blockquote>
+<p>Amazon Redshift 是一种快速且完全托管的数据仓库，让您可以使用标准 SQL 和现有的商业智能 (BI) 工具经济高效地轻松分析您的所有数据。</p>
+<h3 id="突出特点-12"><a href="#突出特点-12" class="headerlink" title="突出特点"></a>突出特点</h3><p>专为数据仓库而优化，对于大小在 100GB 到 1EB 或更高的数据集，拥有非常高的查询性能。对于 PB 级本地数据，它使用列式存储、数据压缩及区域映射，降低了执行查询所需的 I/O 数量。</p>
+</blockquote>
+<h2 id="Neptune"><a href="#Neptune" class="headerlink" title="Neptune"></a>Neptune</h2><blockquote>
+<p>Neptune 是一项快速、可靠且完全托管的图形数据库服务</p>
+<h3 id="典型应用场景-7"><a href="#典型应用场景-7" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>社交网络</li>
+<li>推荐引擎</li>
+<li>欺诈检测</li>
+<li>知识图谱</li>
+<li>生命科学</li>
+<li>网络/IT 运营</li>
+</ul>
+</blockquote>
+<h1 id="迁移"><a href="#迁移" class="headerlink" title="迁移"></a>迁移</h1><h2 id="AWS-Application-Discovery-Service-ADS"><a href="#AWS-Application-Discovery-Service-ADS" class="headerlink" title="AWS Application Discovery Service(ADS)"></a>AWS Application Discovery Service(ADS)</h2><blockquote>
+<p>ADS 可以收集有关企业客户的本地数据中心的信息，从而帮助企业客户规划迁移项目。</p>
+</blockquote>
+<p>数据中心迁移的规划工作可能会涉及数千个互相高度依赖的负载，确定服务器利用率数据和依赖关系映射是迁移流程中的一个重要前期步骤。ADS 可以收集并呈现服务器的配置、使用和行为数据，帮助您更好地了解您的工作负载。</p>
+<h2 id="AWS-Database-Migration-Service-DMS"><a href="#AWS-Database-Migration-Service-DMS" class="headerlink" title="AWS Database Migration Service(DMS)"></a>AWS Database Migration Service(DMS)</h2><blockquote>
+<p>在停机时间最短的状态下将本地数据库迁移至 AWS</p>
+</blockquote>
+<p>DMS 支持同构迁移（如从 Oracle 迁移到 Oracle），异构迁移（如从 SQL Server 迁移到 MySQL）。它还支持您从任意受支持的源位置（包括 Amazon Aurora、PostgreSQL、MySQL、MariaDB、Oracle、SAP ASE 和 SQL Server）将数据流式传输到 Amazon Redshift，以便在 PB 级数据仓库中对数据进行整合和轻松分析。DMS 还可用于连续数据复制，且高度可用。</p>
+<h2 id="Migration-Hub"><a href="#Migration-Hub" class="headerlink" title="Migration Hub"></a>Migration Hub</h2><blockquote>
+<p>AWS Migration Hub 提供单个位置来跨多个 AWS 和合作伙伴解决方案跟踪应用程序迁移的进度</p>
+</blockquote>
+<p>通过 Migration Hub，可以选择任意 AWS 或合作伙伴的迁移工具，并可以了解整个应用程序产品组合的迁移状态（如关键指标、进度信息）</p>
+<h2 id="AWS-Server-Migration-Service-SMS"><a href="#AWS-Server-Migration-Service-SMS" class="headerlink" title="AWS Server Migration Service(SMS)"></a>AWS Server Migration Service(SMS)</h2><blockquote>
+<p>SMS 是一种无代理服务，可以让您更加轻松快速地将成千上万的本地工作负载迁移到 AWS。借助 SMS，您可以自动执行实时服务器卷的增量复制、对其制定计划以及进行追踪，从而能够更轻松地协调大规模服务器迁移</p>
+</blockquote>
+<h2 id="AWS-Snowball"><a href="#AWS-Snowball" class="headerlink" title="AWS Snowball"></a>AWS Snowball</h2><blockquote>
+<p>Snowball 是一种 PB 级数据传输解决方案，它使用安全设备在 AWS 云之间传输大量数据。可解决大规模数据传输的难题（包括高昂网络成本、较长传输时间和安全问题）,成本可低至高速 Internet 费用的五分之一</p>
+</blockquote>
+<p>借助 Snowball，您无需编写任何代码或购买任何硬件即可传输您的数据。只需在 AWS 管理控制台中创建一个任务，然后 Snowball 设备将自动交付于您*。当它到达后，将该设备挂载到您的本地网络、下载并运行 Snowball 客户端来建立连接，然后使用该客户端选择要传输到该设备的文件目录。客户端随后将对文件进行加密，并将其高速传输至该设备。当传输完成后即可返还该设备，E Ink 运送标签将自动更新，您可以通过 Amazon Simple Notification Service (SNS)、短信或直接在控制台中跟踪任务状态。</p>
+<h2 id="AWS-Snowball-Edge"><a href="#AWS-Snowball-Edge" class="headerlink" title="AWS Snowball Edge"></a>AWS Snowball Edge</h2><blockquote>
+<p>AWS Snowball Edge 是一台容量为 100TB 的数据传输设备，具有板载存储与计算功能。可以实现大量数据的移入和移出 AWS 操作。</p>
+</blockquote>
+<p>可以将其用作大型本地数据集的临时存储层，或者在远程或离线位置支持本地工作负载。</p>
+<h3 id="典型应用场景-8"><a href="#典型应用场景-8" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>物联网</li>
+<li>制造业</li>
+<li>嵌入式采集系统</li>
+<li>远程位置与简单数据</li>
+</ul>
+<h2 id="AWS-Snowmobile"><a href="#AWS-Snowmobile" class="headerlink" title="AWS Snowmobile"></a>AWS Snowmobile</h2><blockquote>
+<p>移动的 EB 级数据采集设备</p>
+</blockquote>
+<p>AWS Snowmobile 是一种用于将海量数据移动到 AWS 中的 EB 级数据传输服务。Snowmobile 是一个 45 英尺长的坚固的集装箱，由一台半挂卡车牵引，一次可以传输高达 100PB 的数据。</p>
+<h1 id="网络和分发"><a href="#网络和分发" class="headerlink" title="网络和分发"></a>网络和分发</h1><h2 id="Amazon-Virtual-Private-Cloud-VPC"><a href="#Amazon-Virtual-Private-Cloud-VPC" class="headerlink" title="Amazon Virtual Private Cloud(VPC)"></a>Amazon Virtual Private Cloud(VPC)</h2><blockquote>
+<p>在 AWS 云中预置一个逻辑隔离的部分，让您可以在自己定义的虚拟网络中启动 AWS 资源。</p>
+</blockquote>
+<p> VPC 允许您在 AWS 云中预配置出一个采用逻辑隔离的部分，在这个部分中，您可以在自己定义的虚拟网络中启动 AWS 资源。您可以完全掌控您的虚拟联网环境，包括选择自己的 IP 地址范围、创建子网以及配置路由表和网络网关。您在 VPC 中既可以使用 IPv4 也可以使用 IPv6，从而实现安全而轻松的资源访问和应用程序访问。</p>
+<h2 id="Amazon-CloudFront"><a href="#Amazon-CloudFront" class="headerlink" title="Amazon CloudFront"></a>Amazon CloudFront</h2><blockquote>
+<p>CloudFront 是一种全球内容分发网络 (CDN) 服务，可以安全地以低延迟和高传输速度向浏览者分发数据、视频、应用程序和 API</p>
+<h3 id="典型应用场景-9"><a href="#典型应用场景-9" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>静态资产缓存</li>
+<li>直播和点播视频流式传输</li>
+<li>安全性和 DDoS 保护</li>
+<li>动态内容和自定义内容</li>
+<li>API 加速</li>
+<li>软件分配</li>
+</ul>
+</blockquote>
+<h2 id="Amazon-Route-53"><a href="#Amazon-Route-53" class="headerlink" title="Amazon Route 53"></a>Amazon Route 53</h2><blockquote>
+<p>是一种可用性高、扩展性强的云域名系统 (DNS) Web 服务，与 IPv6 完全兼容。</p>
+</blockquote>
+<p>Route 53的服务器分布在全世界各地，也是亚马逊唯一保证100%可用性的服务。</p>
+<h2 id="Amazon-API-Gateway"><a href="#Amazon-API-Gateway" class="headerlink" title="Amazon API Gateway"></a>Amazon API Gateway</h2><blockquote>
+<p>是一种完全托管的服务，可以帮助开发者轻松创建、发布、维护、监控和保护任意规模的 API</p>
+</blockquote>
+<p>Amazon API Gateway 负责管理所有任务，涉及接受和处理成千上万个并发 API 调用，包括流量管理、授权和访问控制、监控，以及 API 版本管理。Amazon API Gateway 没有最低费用或启动成本，您只需为收到的 API 调用和传输出去的数据量付费。</p>
+<h2 id="AWS-Direct-Connect"><a href="#AWS-Direct-Connect" class="headerlink" title="AWS Direct Connect"></a>AWS Direct Connect</h2><blockquote>
+<p>AWS Direct Connect 服务便于建立一个可连接本地设施和 AWS 的专线网络</p>
+</blockquote>
+<p>可利用 AWS Direct Connect 建立专线联结将 AWS 与数据中心、办公室或主机托管区域相连接，在多数情况下这样可以降低网络成本、提高带宽流量，提供一个比基于 Internet 连接更为一致的网络体验。</p>
+<h2 id="Amazon-Elastic-Load-Balancing-ELB"><a href="#Amazon-Elastic-Load-Balancing-ELB" class="headerlink" title="Amazon Elastic Load Balancing(ELB)"></a>Amazon Elastic Load Balancing(ELB)</h2><blockquote>
+<p>在多个目标 (如 Amazon EC2 实例、容器和 IP 地址) 之间自动分配传入的应用程序流量。</p>
+</blockquote>
+<h3 id="突出特点-13"><a href="#突出特点-13" class="headerlink" title="突出特点"></a>突出特点</h3><p>提供了三种负载均衡器，它们均能实现高可用性、自动扩展和可靠的安全性，因此能让您的应用程序获得容错能力</p>
+<ul>
+<li>应用程序负责均衡器</li>
+<li>网络负载均衡器</li>
+<li>传统负载均衡器<h3 id="典型应用场景-10"><a href="#典型应用场景-10" class="headerlink" title="典型应用场景"></a>典型应用场景</h3></li>
+<li>提高应用程序容错能力</li>
+<li>对容器化应用程序进行自动负载均衡</li>
+<li>自动扩展应用程序</li>
+<li>在 Amazon VPC 中使用 </li>
+</ul>
+<h1 id="开发人员工具"><a href="#开发人员工具" class="headerlink" title="开发人员工具"></a>开发人员工具</h1><h2 id="AWS-CodeStar"><a href="#AWS-CodeStar" class="headerlink" title="AWS CodeStar"></a>AWS CodeStar</h2><blockquote>
+<p>借助 AWS CodeStar，您可以轻松建立完整的开发和持续交付工具链，来编写、生成、测试和部署您的应用程序代码</p>
+<h3 id="突出特点-14"><a href="#突出特点-14" class="headerlink" title="突出特点"></a>突出特点</h3><p>提供统一的用户界面</p>
+</blockquote>
+<h2 id="AWS-CodeCommit"><a href="#AWS-CodeCommit" class="headerlink" title="AWS CodeCommit"></a>AWS CodeCommit</h2><blockquote>
+<p>在私人的 Git 存储库中存储代码</p>
+</blockquote>
+<h2 id="AWS-CodeBuild"><a href="#AWS-CodeBuild" class="headerlink" title="AWS CodeBuild"></a>AWS CodeBuild</h2><blockquote>
+<p>生成和测试代码</p>
+</blockquote>
+<h2 id="AWS-CodeDeploy"><a href="#AWS-CodeDeploy" class="headerlink" title="AWS CodeDeploy"></a>AWS CodeDeploy</h2><blockquote>
+<p>CodeDeploy 是一项将软件自动部署到各种计算服务 (包括 Amazon EC2、AWS Lambda 和本地运行的实例) 的服务</p>
+</blockquote>
+<h2 id="AWS-CodePipeline"><a href="#AWS-CodePipeline" class="headerlink" title="AWS CodePipeline"></a>AWS CodePipeline</h2><blockquote>
+<p>CodePipeline 是一种持续集成与持续交付服务，可以实现快速而可靠的应用程序和基础设施更新</p>
+</blockquote>
+<p>每次更改代码时，CodePipeline 都会根据您定义的发布流程模型构建、测试和部署您的代码。这使您可以快速可靠地交付功能和更新。通过我们预先为常见第三方服务（如 GitHub）构建的插件，或在任何发布流程阶段集成自己自定义的插件，您可以轻松构建端到端的解决方案。</p>
+<h2 id="AWS-Cloud9"><a href="#AWS-Cloud9" class="headerlink" title="AWS Cloud9"></a>AWS Cloud9</h2><blockquote>
+<p>Cloud9 是一种基于云的集成开发环境 (IDE)，您只需要一个浏览器，即可编写、运行和调试代码</p>
+</blockquote>
+<h2 id="AWS-X-Ray"><a href="#AWS-X-Ray" class="headerlink" title="AWS X-Ray"></a>AWS X-Ray</h2><blockquote>
+<p>X-Ray 可以帮助开发人员分析与调试分布式生产应用程序，例如使用微服务架构构建的应用程序</p>
+</blockquote>
+<p>助 X-Ray，您可以了解应用程序及其底层服务的执行方式，从而识别导致性能问题和错误的根本原因并将其排除。X-Ray 可在请求通过应用程序时提供请求的端到端视图，并展示应用程序底层组件的映射。您可以使用 X-Ray 分析开发和生产中的应用程序，从简单的三层应用程序到包含上千种服务的复杂微服务应用程序。</p>
+<h2 id="AWS-命令行界面-CLI"><a href="#AWS-命令行界面-CLI" class="headerlink" title="AWS 命令行界面(CLI)"></a>AWS 命令行界面(CLI)</h2><blockquote>
+<p>CLI 是用于管理 AWS 服务的统一工具</p>
+</blockquote>
+<h1 id="管理工具"><a href="#管理工具" class="headerlink" title="管理工具"></a>管理工具</h1><h2 id="CloudWatch"><a href="#CloudWatch" class="headerlink" title="CloudWatch"></a>CloudWatch</h2><blockquote>
+<p>CloudWatch 是一项针对 AWS 云资源和在 AWS 上运行的应用程序进行监控的服务</p>
+<h3 id="突出功能"><a href="#突出功能" class="headerlink" title="突出功能"></a>突出功能</h3><ul>
+<li>监控 EC2</li>
+<li>监控数据库、工作流、弹性负载均衡器等 Amazon 资源</li>
+<li>监控自定义指标</li>
+<li>监控和存储日志</li>
+<li>设置警报</li>
+<li>查看图表和统计信息</li>
+<li>监控并应对资源更改：CloudWatch Events 提供了一个描述 AWS 资源更改的事件流。您可轻松构建相应的工作流，由这些工作流自动执行您定义的操作，例如，当所关注事件发生时调用某个 AWS Lambda 函数。</li>
+</ul>
+</blockquote>
+<h2 id="AWS-Auto-Scaling"><a href="#AWS-Auto-Scaling" class="headerlink" title="AWS Auto Scaling"></a>AWS Auto Scaling</h2><blockquote>
+<p>AWS Auto Scaling 可以监控您的应用程序并自动调整容量，以便以尽可能低的成本来保持稳定、可预测的性能。可以为 Amazon EC2 实例和 Spot 队列、Amazon ECS 任务、Amazon DynamoDB 表和索引以及 Amazon Aurora 副本等资源制定扩展计划</p>
+</blockquote>
+<h2 id="AWS-CloudFormation"><a href="#AWS-CloudFormation" class="headerlink" title="AWS CloudFormation"></a>AWS CloudFormation</h2><blockquote>
+<p>CloudFormation 使用户可以跨地区和账户，使用简单的文本文件以自动化的安全方式为应用程序需要的所有资源建模并进行预配置。</p>
+</blockquote>
+<h2 id="AWS-CloudTrail"><a href="#AWS-CloudTrail" class="headerlink" title="AWS CloudTrail"></a>AWS CloudTrail</h2><blockquote>
+<p>实现对 AWS 账户进行监管、合规性检查、操作审核和风险审核。CloudTrail 可以记录日志、持续监控并保留与整个 AWS 基础设施中的操作相关的账户活动</p>
+</blockquote>
+<h2 id="AWS-Config"><a href="#AWS-Config" class="headerlink" title="AWS Config"></a>AWS Config</h2><blockquote>
+<p>可以使用该服务评估、审核和评价您的 AWS 资源的配置</p>
+</blockquote>
+<h2 id="AWS-OpsWorks"><a href="#AWS-OpsWorks" class="headerlink" title="AWS OpsWorks"></a>AWS OpsWorks</h2><blockquote>
+<p>利用 Chef 和 Puppet 实现操作自动化</p>
+</blockquote>
+<p>OpsWorks 是一款配置管理服务，提供 Chef 和 Puppet 的托管实例。Chef 和 Puppet 是自动化平台，允许您使用代码来自动配置服务器。借助 OpsWorks，您可以使用 Chef 和 Puppet 自动完成所有 Amazon EC2 实例或本地计算环境中的服务器配置、部署和管理。OpsWorks 提供三种产品：AWS Opsworks for Chef Automate、AWS OpsWorks for Puppet Enterprise 和 AWS OpsWorks Stacks。</p>
+<h2 id="AWS-Service-Catalog"><a href="#AWS-Service-Catalog" class="headerlink" title="AWS Service Catalog"></a>AWS Service Catalog</h2><blockquote>
+<p>创建和使用标准化产品</p>
+</blockquote>
+<p>利用 AWS Service Catalog，组织可以创建和管理关于已批准在 AWS 上使用的 IT 服务的目录。这些 IT 服务可以包含所有内容，从虚拟机映像、服务器、软件和数据库到完整的多层次应用程序架构一应俱全。AWS Service Catalog 使您可以集中管理普遍部署的 IT 服务，帮助您实现一致性管理并满足您的合规性要求，同时使用户能够仅快速部署他们所需的已批准的 IT 服务。</p>
+<h2 id="AWS-Systems-Manager"><a href="#AWS-Systems-Manager" class="headerlink" title="AWS Systems Manager"></a>AWS Systems Manager</h2><blockquote>
+<p>了解运行状况并对 AWS 资源采取行动</p>
+</blockquote>
+<p>AWS Systems Manager 让您能够查看和控制 AWS 上的基础设施，提供了统一的用户界面，为客户简化资源和应用程序管理、缩短检测和解决运行问题的时间，让用户能够轻松安全地大规模运行和管理基础设施。</p>
+<h2 id="AWS-Trusted-Advisor"><a href="#AWS-Trusted-Advisor" class="headerlink" title="AWS Trusted Advisor"></a>AWS Trusted Advisor</h2><blockquote>
+<p>Trusted Advisor 是一种在线资源，可通过优化 AWS 环境来帮助降低成本、提高性能以及改善安全性，还可提供实时指导来帮助您根据 AWS 最佳实践对资源进行预置。</p>
+</blockquote>
+<h2 id="AWS-Personal-Health-Dashboard"><a href="#AWS-Personal-Health-Dashboard" class="headerlink" title="AWS Personal Health Dashboard"></a>AWS Personal Health Dashboard</h2><blockquote>
+<p>会在 AWS 出现可能会带来影响的事件时提供提醒和修复指导</p>
+</blockquote>
+<h1 id="媒体服务"><a href="#媒体服务" class="headerlink" title="媒体服务"></a>媒体服务</h1><h2 id="Elastic-Transcoder"><a href="#Elastic-Transcoder" class="headerlink" title="Elastic Transcoder"></a>Elastic Transcoder</h2><blockquote>
+<p>Amazon Elastic Transcoder 是在云环境中进行媒体转码的工具</p>
+</blockquote>
+<p>开发人员和企业可以用它来将媒体文件从源格式转换（或称为“转码”）到其他版本，以便在智能电话、平板电脑和 PC 等设备上播放。</p>
+<h2 id="Amazon-Kinesis-Video-Streams"><a href="#Amazon-Kinesis-Video-Streams" class="headerlink" title="Amazon Kinesis Video Streams"></a>Amazon Kinesis Video Streams</h2><blockquote>
+<p>可以轻松而安全地将视频从连接的设备流式传输到 AWS，用于分析、机器学习和其他处理</p>
+</blockquote>
+<p>需要在设备端安装 SDK</p>
+<h3 id="典型应用场景-11"><a href="#典型应用场景-11" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>智能家居</li>
+<li>智能城市</li>
+<li>工业自动化</li>
+</ul>
+<h2 id="AWS-Elemental-MediaConvert-视频转码"><a href="#AWS-Elemental-MediaConvert-视频转码" class="headerlink" title="AWS Elemental MediaConvert 视频转码"></a>AWS Elemental MediaConvert 视频转码</h2><blockquote>
+<p>具有广播级功能的基于文件的视频转码服务。能够轻松创建视频点播 (VOD) 内容，实现大规模的广播和多屏幕传输</p>
+</blockquote>
+<h2 id="AWS-Elemental-MediaLive-实时视频处理"><a href="#AWS-Elemental-MediaLive-实时视频处理" class="headerlink" title="AWS Elemental MediaLive 实时视频处理"></a>AWS Elemental MediaLive 实时视频处理</h2><blockquote>
+<p>一款广播级实时视频处理服务。能够创建高质量视频流，以传送到广播电视和连接的电视机、平板电脑、智能手机和机顶盒等连接 Internet 的多屏设备</p>
+<h3 id="典型应用场景-12"><a href="#典型应用场景-12" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>视频直播</li>
+</ul>
+</blockquote>
+<h2 id="AWS-Elemental-MediaPackage-基础媒体包"><a href="#AWS-Elemental-MediaPackage-基础媒体包" class="headerlink" title="AWS Elemental MediaPackage 基础媒体包"></a>AWS Elemental MediaPackage 基础媒体包</h2><blockquote>
+<p>视频发放与包装服务，可靠地保护通过 Internet 交付的视频</p>
+<h3 id="突出特点-15"><a href="#突出特点-15" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>能利用单一视频输入创建带格式的视频流，方便不同终端播放</li>
+<li>可以使用数字版权管理 (DRM) 保护内容</li>
+<li>会根据负载自动扩展资源</li>
+</ul>
+</blockquote>
+<h2 id="AWS-Elemental-MediaStore-视频媒体存储"><a href="#AWS-Elemental-MediaStore-视频媒体存储" class="headerlink" title="AWS Elemental MediaStore 视频媒体存储"></a>AWS Elemental MediaStore 视频媒体存储</h2><blockquote>
+<p>是一款针对媒体进行了优化的 AWS 存储服务，它能为您提供必要的性能、一致性和低延迟，以便交付实时流视频内容。</p>
+</blockquote>
+<h2 id="AWS-Elemental-MediaTailor-视频广告嵌入"><a href="#AWS-Elemental-MediaTailor-视频广告嵌入" class="headerlink" title="AWS Elemental MediaTailor 视频广告嵌入"></a>AWS Elemental MediaTailor 视频广告嵌入</h2><blockquote>
+<p>视频提供商能在视频流中插入针对个人的广告，而且不会影响广播级服务品质</p>
+</blockquote>
+<p>使用 AWS Elemental MediaTailor，实时或按需视频的每位观众都会收到一条视频流，其中内嵌不同的个性化广告。与其他个性化广告解决方案不同，使用 AWS Elemental MediaTailor，可以达到广播级视频品质的完整视频流 (视频和广告)，提升观众的体验。</p>
+<h1 id="安全、身份和合规性"><a href="#安全、身份和合规性" class="headerlink" title="安全、身份和合规性"></a>安全、身份和合规性</h1><h2 id="Identity-amp-Access-Management-IAM"><a href="#Identity-amp-Access-Management-IAM" class="headerlink" title="Identity &amp; Access Management(IAM)"></a>Identity &amp; Access Management(IAM)</h2><blockquote>
+<p>IAM 使用户能够安全地管理对 AWS 服务和资源的访问操作</p>
+</blockquote>
+<h2 id="Amazon-Cloud-Directory"><a href="#Amazon-Cloud-Directory" class="headerlink" title="Amazon Cloud Directory"></a>Amazon Cloud Directory</h2><blockquote>
+<p>Amazon Cloud Directory 可以轻松创建高度灵活、可扩展和具成本效益的目录</p>
+</blockquote>
+<p>Cloud Directory 能让您灵活地使用跨多个维度的层次结构创建目录</p>
+<h2 id="Amazon-Cognito"><a href="#Amazon-Cognito" class="headerlink" title="Amazon Cognito"></a>Amazon Cognito</h2><blockquote>
+<p>轻松地为 Web 和移动应用程序添加用户注册/登录和访问控制功能</p>
+</blockquote>
+<h2 id="AWS-Single-Sign-On-SSO"><a href="#AWS-Single-Sign-On-SSO" class="headerlink" title="AWS Single Sign-On(SSO)"></a>AWS Single Sign-On(SSO)</h2><blockquote>
+<p>SSO 是一项云 SSO 服务，可以轻松地集中管理对多个 AWS 账户和业务应用程序的 SSO 访问</p>
+</blockquote>
+<h2 id="Amazon-GuardDuty"><a href="#Amazon-GuardDuty" class="headerlink" title="Amazon GuardDuty"></a>Amazon GuardDuty</h2><blockquote>
+<p>Amazon GuardDuty 是一种托管的威胁检测服务，可持续监控恶意或未经授权的行为，从而帮助保护您的 AWS 账户和工作负载</p>
+</blockquote>
+<h2 id="Amazon-Inspector"><a href="#Amazon-Inspector" class="headerlink" title="Amazon Inspector"></a>Amazon Inspector</h2><blockquote>
+<p>Amazon Inspector 是一项自动安全评估服务，有助于提高在 AWS 上部署的应用程序的安全性与合规性</p>
+</blockquote>
+<p>执行评估后，Amazon Inspector 会生成按严重程度确定优先级的安全检验详细列表。这些评估结果可直接接受审核，也可作为通过 Amazon Inspector 控制台或 API 提供的详细评估报告的一部分接受审核。</p>
+<h2 id="Amazon-Macie"><a href="#Amazon-Macie" class="headerlink" title="Amazon Macie"></a>Amazon Macie</h2><blockquote>
+<p>Amazon Macie 是一种安全服务，可通过机器学习自动发现、分类和保护 AWS 中的敏感数据</p>
+</blockquote>
+<h2 id="AWS-Certificate-Manager"><a href="#AWS-Certificate-Manager" class="headerlink" title="AWS Certificate Manager"></a>AWS Certificate Manager</h2><blockquote>
+<p>AWS Certificate Manager 是一项服务，可帮助您轻松地预置、管理和部署用于 AWS 服务的安全套接字层/传输层安全性 (SSL/TLS) 证书</p>
+</blockquote>
+<h2 id="AWS-CloudHSM"><a href="#AWS-CloudHSM" class="headerlink" title="AWS CloudHSM"></a>AWS CloudHSM</h2><blockquote>
+<p>AWS CloudHSM 是基于云的硬件安全模块 (HSM)，让您能够在 AWS 云上轻松生成和使用自己的加密密钥</p>
+</blockquote>
+<h2 id="AWS-Directory-Service"><a href="#AWS-Directory-Service" class="headerlink" title="AWS Directory Service"></a>AWS Directory Service</h2><blockquote>
+<p>适用于 Microsoft Active Directory 的 AWS Directory Service 又称为 AWS Microsoft AD，它是一项构建于实际 Microsoft Active Directory 之上的 AWS 托管目录服务，由 Windows Server 2012 R2 提供支持</p>
+</blockquote>
+<h2 id="AWS-Key-Management-Service-KMX"><a href="#AWS-Key-Management-Service-KMX" class="headerlink" title="AWS Key Management Service(KMX)"></a>AWS Key Management Service(KMX)</h2><blockquote>
+<p>KMS 是一项使用经 FIPS 140-2 验证的硬件安全模块保护密钥安全的托管服务，可帮助您轻松创建和控制用于加密数据的加密密钥</p>
+</blockquote>
+<h2 id="Organizations"><a href="#Organizations" class="headerlink" title="Organizations"></a>Organizations</h2><blockquote>
+<p>AWS Organizations 可为多个 AWS 账户提供基于策略的管理。Organizations 支持您针对多个账户集中管理策略，无需使用自定义脚本和手动操作流程。</p>
+</blockquote>
+<h2 id="AWS-Shield"><a href="#AWS-Shield" class="headerlink" title="AWS Shield"></a>AWS Shield</h2><blockquote>
+<p>AWS Shield 是一种托管式分布式拒绝服务 (DDoS) 防护服务，可以保护在 AWS 上运行的防护应用程序</p>
+</blockquote>
+<h2 id="AWS-WAF"><a href="#AWS-WAF" class="headerlink" title="AWS WAF"></a>AWS WAF</h2><blockquote>
+<p>WAF 是一款 Web 应用程序防火墙，帮助保护您的 Web 应用程序免受常见 Web 漏洞的攻击，这些攻击会影响应用程序的可用性、损害安全性或消耗过多的资源</p>
+</blockquote>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><h2 id="Amazon-Athena-数据库查询"><a href="#Amazon-Athena-数据库查询" class="headerlink" title="Amazon Athena 数据库查询"></a>Amazon Athena 数据库查询</h2><blockquote>
+<p>Athena 是一种交互式查询服务，让您能够轻松使用 SQL 分析 Amazon S3 中的数据</p>
+</blockquote>
+<h2 id="EMR"><a href="#EMR" class="headerlink" title="EMR"></a>EMR</h2><blockquote>
+<p>轻松运行和扩展 Apache Hadoop、Spark、HBase、Presto、Hive 以及其他大数据框架</p>
+<h3 id="典型应用场景-13"><a href="#典型应用场景-13" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><p>Amazon EMR 能够安全可靠地处理广泛的大数据使用案例</p>
+<ul>
+<li>日志分析</li>
+<li>Web 索引</li>
+<li>数据转换</li>
+<li>机器学习</li>
+<li>财务分析</li>
+<li>科学模拟</li>
+<li>生物信息</li>
+</ul>
+</blockquote>
+<h2 id="Amazon-CloudSearch-云搜索服务"><a href="#Amazon-CloudSearch-云搜索服务" class="headerlink" title="Amazon CloudSearch 云搜索服务"></a>Amazon CloudSearch 云搜索服务</h2><blockquote>
+<p>一款在 AWS 云中托管的服务，可让您简单且经济高效地为网站或应用程序设置、管理或扩展搜索解决方案</p>
+</blockquote>
+<h2 id="Amazon-Elasticsearch-Service-搜索分析引擎"><a href="#Amazon-Elasticsearch-Service-搜索分析引擎" class="headerlink" title="Amazon Elasticsearch Service 搜索分析引擎"></a>Amazon Elasticsearch Service 搜索分析引擎</h2><blockquote>
+<p>Amazon Elasticsearch Service 是一项完全托管的服务，可以提供各种易于使用的 Elasticsearch API 和实时分析功能，还可以实现生产工作负载需要的可用性、可扩展性和安全性。本服务在内部集成了 Kibana、Logstash 以及 Amazon Virtual Private Cloud (VPC)、AWS Key Management Service (KMS)、Amazon Kinesis Data Firehose、AWS Lambda、Amazon Cognito 和 Amazon CloudWatch 等 AWS 产品，因此您可以将原始数据安全快速地转变为具有可行性的行业见解。</p>
+</blockquote>
+<h2 id="Amazon-Kinesis"><a href="#Amazon-Kinesis" class="headerlink" title="Amazon Kinesis"></a>Amazon Kinesis</h2><blockquote>
+<p>Amazon Kinesis 可让您轻松收集、处理和分析实时流数据，无需等到收集完全部数据后才开始进行处理，以便您及时获得见解并对新信息快速做出响应。</p>
+</blockquote>
+<h3 id="典型应用场景-14"><a href="#典型应用场景-14" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>构建视频分析应用程序</li>
+<li>从批量分析发展到实施分析</li>
+</ul>
+<h2 id="Amazon-Quicksight"><a href="#Amazon-Quicksight" class="headerlink" title="Amazon Quicksight"></a>Amazon Quicksight</h2><blockquote>
+<p>Amazon QuickSight 是一项快速的云支持商业分析服务，让您可以轻松构建可视化内容，执行即时性分析并从数据中迅速获取业务洞察。使用我们基于云的服务，您可以轻松连接到您的数据，执行高级分析，创建令人惊叹的可视化内容和功能丰富的控制面板，且该控制面板支持从任何浏览器或移动设备进行访问。
+商业BI分析</p>
+</blockquote>
+<h2 id="AWS-Data-Pipeline"><a href="#AWS-Data-Pipeline" class="headerlink" title="AWS Data Pipeline"></a>AWS Data Pipeline</h2><blockquote>
+<p>AWS Data Pipeline 是一种 Web 服务，可帮助您可靠地处理数据并以指定的间隔在不同 AWS 计算与存储服务以及本地数据源之间移动数据</p>
+</blockquote>
+<h2 id="AWS-Glue"><a href="#AWS-Glue" class="headerlink" title="AWS Glue"></a>AWS Glue</h2><blockquote>
+<p>AWS Glue 是一项完全托管的提取、转换和加载 (ETL) 服务，让客户能够轻松准备和加载数据进行分析</p>
+</blockquote>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="Amazon-Sagemaker"><a href="#Amazon-Sagemaker" class="headerlink" title="Amazon Sagemaker"></a>Amazon Sagemaker</h2><blockquote>
+<p>大规模建立，训练和部署机器学习模型</p>
+<h2 id="Amazon-Comprehend"><a href="#Amazon-Comprehend" class="headerlink" title="Amazon Comprehend"></a>Amazon Comprehend</h2><p>发现文本中的见解和关系</p>
+<h2 id="Amazon-Lex"><a href="#Amazon-Lex" class="headerlink" title="Amazon Lex"></a>Amazon Lex</h2><p>构建语音和文本聊天机器人</p>
+<h2 id="Amazon-Polly"><a href="#Amazon-Polly" class="headerlink" title="Amazon Polly"></a>Amazon Polly</h2><p>将文本转化为逼真的语音</p>
+<h2 id="Amazon-Rekognition"><a href="#Amazon-Rekognition" class="headerlink" title="Amazon Rekognition"></a>Amazon Rekognition</h2><p>图像和视频分析</p>
+<h2 id="Amazon-Machine-Learning"><a href="#Amazon-Machine-Learning" class="headerlink" title="Amazon Machine Learning"></a>Amazon Machine Learning</h2><p>针对开发人员的机器学习</p>
+<h2 id="Amazon-Translate"><a href="#Amazon-Translate" class="headerlink" title="Amazon Translate"></a>Amazon Translate</h2><p>自然流利的语言翻译</p>
+<h2 id="Amazon-Transcibe"><a href="#Amazon-Transcibe" class="headerlink" title="Amazon Transcibe"></a>Amazon Transcibe</h2><p>自动语音识别</p>
+<h2 id="AWS-DeepLens"><a href="#AWS-DeepLens" class="headerlink" title="AWS DeepLens"></a>AWS DeepLens</h2><p>支持深度学习的摄像机</p>
+<h2 id="Deep-Leaning-AMI"><a href="#Deep-Leaning-AMI" class="headerlink" title="Deep Leaning AMI"></a>Deep Leaning AMI</h2><p>AWS Deep Learning AMI 可以为机器学习专业人员和研究人员提供基础设施和各种工具，从而加快在云中进行任意规模的深度学习的速度。您可以快速启动预先安装了常见深度学习框架 (如 Apache MXNet 和 Gluon、TensorFlow、Microsoft Cognitive Toolkit、Caffe、Caffe2、Theano、Torch、Pytorch、Chainer 和 Keras) 的 Amazon EC2 实例来训练复杂的自定义 AI 模型、实验新算法或学习新的技能和技巧。</p>
+</blockquote>
+<h2 id="Apache-MXnet-on-AWS"><a href="#Apache-MXnet-on-AWS" class="headerlink" title="Apache MXnet on AWS"></a>Apache MXnet on AWS</h2><blockquote>
+<p>Apache MXNet 是一种快速并且可扩展的训练与推理框架，附带简单易用的机器学习 API。</p>
+</blockquote>
+<h2 id="TensorFlow-on-AWS"><a href="#TensorFlow-on-AWS" class="headerlink" title="TensorFlow on AWS"></a>TensorFlow on AWS</h2><blockquote>
+<p>您可以在 AWS 上开始体验完全托管的 TensorFlow 和 Amazon SageMaker，后者是一个可大规模构建、训练和部署机器学习模型的平台</p>
+</blockquote>
+<p>#移动服务</p>
+<h2 id="AWS-Mobile-Hub"><a href="#AWS-Mobile-Hub" class="headerlink" title="AWS Mobile Hub"></a>AWS Mobile Hub</h2><blockquote>
+<p>构建、测试和监控应用程序</p>
+</blockquote>
+<h2 id="Amazon-API-Gateway-1"><a href="#Amazon-API-Gateway-1" class="headerlink" title="Amazon API Gateway"></a>Amazon API Gateway</h2><blockquote>
+<p>构建、部署和管理 API</p>
+</blockquote>
+<h2 id="Amazon-Pinpoint"><a href="#Amazon-Pinpoint" class="headerlink" title="Amazon Pinpoint"></a>Amazon Pinpoint</h2><blockquote>
+<p>为移动应用程序推送通知</p>
+</blockquote>
+<h2 id="AWS-AppSync"><a href="#AWS-AppSync" class="headerlink" title="AWS AppSync"></a>AWS AppSync</h2><blockquote>
+<p>实时和离线移动数据应用程序</p>
+</blockquote>
+<h2 id="AWS-Device-Farm"><a href="#AWS-Device-Farm" class="headerlink" title="AWS Device Farm"></a>AWS Device Farm</h2><blockquote>
+<p>在云中的真实设备上测试 Android、FireOS 及 iOS 应用</p>
+</blockquote>
+<h2 id="AWS-Mobile-SDK"><a href="#AWS-Mobile-SDK" class="headerlink" title="AWS Mobile SDK"></a>AWS Mobile SDK</h2><blockquote>
+<p>移动软件开发工具包</p>
+</blockquote>
+<h1 id="AR-和-VR"><a href="#AR-和-VR" class="headerlink" title="AR 和 VR"></a>AR 和 VR</h1><h2 id="Amazon-Sumerian"><a href="#Amazon-Sumerian" class="headerlink" title="Amazon Sumerian"></a>Amazon Sumerian</h2><blockquote>
+<p>构建和运行 VR 和 AR 应用程序</p>
+</blockquote>
+<h1 id="应用程序集成"><a href="#应用程序集成" class="headerlink" title="应用程序集成"></a>应用程序集成</h1><h2 id="AWS-Step-Functions"><a href="#AWS-Step-Functions" class="headerlink" title="AWS Step Functions"></a>AWS Step Functions</h2><blockquote>
+<p>使用可视工作流来构建分布式应用程序</p>
+</blockquote>
+<h2 id="Amazon-Simple-Queue-Service-SQS"><a href="#Amazon-Simple-Queue-Service-SQS" class="headerlink" title="Amazon Simple Queue Service (SQS)"></a>Amazon Simple Queue Service (SQS)</h2><blockquote>
+<p>适用于微服务、分布式系统和无服务器应用程序的完全托管的消息队列</p>
+<h3 id="突出特点-16"><a href="#突出特点-16" class="headerlink" title="突出特点"></a>突出特点</h3><ul>
+<li>标准队列
+Amazon SQS 提供标准队列作为默认队列类型。标准队列使您能够每秒处理近乎无限数量的事务。标准队列可确保每条消息至少被传送一次。但是，由于允许高吞吐量的高度分布式架构，偶尔会有一条消息的某个副本不按顺序传送。标准队列提供最大努力排序，可保证消息大致按其发送的顺序进行传送。</li>
+</ul>
+</blockquote>
+<ul>
+<li>FIFO 队列
+FIFO 队列是对标准队列的补充。这种队列类型最重要的功能是 FIFO (先进先出) 传送和一次性处理：让消息的发送顺序和接收顺序严格保持一致，且消息只传送一次并保留到用户将其处理和删除；重复的消息不会被引入队列。FIFO 队列还支持消息组，即允许在单个队列中传送多个有序流。FIFO 队列的上限是 300 个事务/秒 (TPS)，但具有标准队列的全部功能。</li>
+</ul>
+<h2 id="Amazon-Simple-Notification-Service-SNS"><a href="#Amazon-Simple-Notification-Service-SNS" class="headerlink" title="Amazon Simple Notification Service (SNS)"></a>Amazon Simple Notification Service (SNS)</h2><blockquote>
+<p>适用于微服务、分布式系统和无服务器应用程序的发布/订阅消息收发和移动通知</p>
+</blockquote>
+<h2 id="Amazon-MQ"><a href="#Amazon-MQ" class="headerlink" title="Amazon MQ"></a>Amazon MQ</h2><blockquote>
+<p>Amazon MQ 是一种适用于 Apache ActiveMQ 的托管消息代理服务，可让您轻松在云中设置和操作消息代理</p>
+<h3 id="突出特点-17"><a href="#突出特点-17" class="headerlink" title="突出特点"></a>突出特点</h3><p> Amazon MQ 支持多种消息收发协议，如：JMS、NMS、AMQP、STOMP、MQTT 和 WebSocket。无需重新编写应用程序中的任何消息收发代码，便可轻松从使用这些标准的任意消息代理迁移至 Amazon MQ。</p>
+</blockquote>
+<h1 id="企业生产力"><a href="#企业生产力" class="headerlink" title="企业生产力"></a>企业生产力</h1><h2 id="Alexa-for-Business"><a href="#Alexa-for-Business" class="headerlink" title="Alexa for Business"></a>Alexa for Business</h2><blockquote>
+<p>语音智能助手</p>
+</blockquote>
+<h2 id="Amazon-Chime"><a href="#Amazon-Chime" class="headerlink" title="Amazon Chime"></a>Amazon Chime</h2><blockquote>
+<p>Amazon Chime 是一项通信服务，可使用您信赖的安全且易于使用的应用程序转换网络会议。Amazon Chime 可跨设备无缝运行，使您始终保持连接。您可以使用 Amazon Chime 在组织内外召开网络会议和视频会议、通话、聊天以及分享内容。</p>
+</blockquote>
+<h2 id="Amazon-WorkDocs"><a href="#Amazon-WorkDocs" class="headerlink" title="Amazon WorkDocs"></a>Amazon WorkDocs</h2><blockquote>
+<p>Amazon WorkDocs 是一项安全、完全托管的文件协作和管理服务，具有可扩展的软件开发工具包，可在 AWS 上运行</p>
+<h3 id="典型应用场景-15"><a href="#典型应用场景-15" class="headerlink" title="典型应用场景"></a>典型应用场景</h3><ul>
+<li>团队协作</li>
+<li>企业文件同步和共享</li>
+<li>ECM 的内容存储库</li>
+<li>构建内容丰富的应用程序</li>
+<li>代替传统的网络文件共享</li>
+</ul>
+</blockquote>
+<h2 id="Amazon-WorkMail"><a href="#Amazon-WorkMail" class="headerlink" title="Amazon WorkMail"></a>Amazon WorkMail</h2><blockquote>
+<p>Amazon WorkMail 是一种安全的托管型商务电子邮件与日历服务，可以支持现有的桌面和移动电子邮件客户端应用程序</p>
+</blockquote>
+<h1 id="桌面和应用程序流处理"><a href="#桌面和应用程序流处理" class="headerlink" title="桌面和应用程序流处理"></a>桌面和应用程序流处理</h1><h2 id="Amazon-WorkSpaces"><a href="#Amazon-WorkSpaces" class="headerlink" title="Amazon WorkSpaces"></a>Amazon WorkSpaces</h2><blockquote>
+<p>桌面计算服务，利用 Amazon WorkSpaces，您可以为您的用户轻松预置基于云的虚拟 Microsoft Windows 桌面，让用户使用支持的任何设备随时随地访问自己需要的文档、应用程序和资源</p>
+</blockquote>
+<h2 id="Amazon-AppStream-2-0"><a href="#Amazon-AppStream-2-0" class="headerlink" title="Amazon AppStream 2.0"></a>Amazon AppStream 2.0</h2><blockquote>
+<p>借助 Amazon AppStream 2.0，您可以轻松将现有桌面应用程序导入 AWS 并开始将其流式传输到兼容 HTML5 的浏览器，您的用户可始终访问其应用程序的最新版本</p>
+</blockquote>
+<p>#物联网</p>
+<h2 id="AWS-IoT-Core"><a href="#AWS-IoT-Core" class="headerlink" title="AWS IoT Core"></a>AWS IoT Core</h2><blockquote>
+<p>AWS IoT Core 是一款托管的云平台，使互联设备可以轻松安全地与云应用程序及其他设备交互。AWS IoT Core 可以支持数十亿台设备和数万亿条消息，并且可以对这些消息进行处理并将其安全可靠地路由至 AWS 终端节点和其他设备。借助 AWS IoT Core，您的应用程序可以随时跟踪所有设备并与其通信，即使这些设备未处于连接状态也不例外。</p>
+</blockquote>
+<h2 id="Amazon-FreeRTOS"><a href="#Amazon-FreeRTOS" class="headerlink" title="Amazon FreeRTOS"></a>Amazon FreeRTOS</h2><blockquote>
+<p>MCU OS，实现对低功耗的小型边缘设备进行编程、部署、安全保护、连接和管理</p>
+</blockquote>
+<h2 id="AWS-Greengrass"><a href="#AWS-Greengrass" class="headerlink" title="AWS Greengrass"></a>AWS Greengrass</h2><blockquote>
+<p>互联设备的本地计算、消息收发、数据缓存、同步和 ML Inference 功能</p>
+</blockquote>
+<p>借助 AWS Greengrass，互联设备可以运行 AWS Lambda 函数、同步设备数据以及与其他设备安全通信 – 甚至无需连接互联网</p>
+<h2 id="AWS-IoT-1-Click"><a href="#AWS-IoT-1-Click" class="headerlink" title="AWS IoT 1-Click"></a>AWS IoT 1-Click</h2><blockquote>
+<p>AWS IoT 1-Click 是一种服务，简单设备可以通过该服务轻松触发执行特定操作的 AWS Lambda 函数</p>
+</blockquote>
+<h2 id="AWS-IoT-Analytics"><a href="#AWS-IoT-Analytics" class="headerlink" title="AWS IoT Analytics"></a>AWS IoT Analytics</h2><blockquote>
+<p>AWS IoT Analytics 是一项完全托管的服务，让您能够对大量 IoT 数据轻松运行复杂的分析，无需担心构建自己的 IoT 分析平台通常会产生的所有成本和复杂性</p>
+</blockquote>
+<p>AWS IoT Analytics 完全托管并且自动扩展，可以处理高达 PB 级的 IoT 数据。借助 IoT Analytics，您能够分析来自数百万台设备的数据并构建速度快、响应性高的 IoT 应用程序，无需管理硬件或基础设施。</p>
+<h2 id="AWS-IoT-Button"><a href="#AWS-IoT-Button" class="headerlink" title="AWS IoT Button"></a>AWS IoT Button</h2><blockquote>
+<p>一款基于 Amazon Dash Button 硬件的可编程按钮</p>
+</blockquote>
+<h2 id="AWS-IoT-Device-Defender"><a href="#AWS-IoT-Device-Defender" class="headerlink" title="AWS IoT Device Defender"></a>AWS IoT Device Defender</h2><blockquote>
+<p>AWS IoT Device Defender 会不断审核与设备关联的安全策略，以确保设备始终遵循安全最佳实践</p>
+</blockquote>
+<h2 id="AWS-IoT-Device-Management"><a href="#AWS-IoT-Device-Management" class="headerlink" title="AWS IoT Device Management"></a>AWS IoT Device Management</h2><blockquote>
+<p>安全地大规模注册、组织、监控和远程管理 IoT 设备</p>
+</blockquote>
+<h1 id="游戏开发"><a href="#游戏开发" class="headerlink" title="游戏开发"></a>游戏开发</h1><h2 id="Amazon-GameLift"><a href="#Amazon-GameLift" class="headerlink" title="Amazon GameLift"></a>Amazon GameLift</h2><blockquote>
+<p>一款在 AWS 上构建的专用游戏服务器托管和匹配解决方案，使用它，可节省长达数千小时的工程时间，并能降低成本</p>
+<h2 id="Amazon-Lumberyard"><a href="#Amazon-Lumberyard" class="headerlink" title="Amazon Lumberyard"></a>Amazon Lumberyard</h2><p>免费、功能强大、完全可以自定义的一款游戏引擎</p>
+</blockquote>
+
       
     </div>
     
@@ -434,8 +974,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/31/KNX系统语音网关/" rel="next" title="KNX系统语音网关">
-                <i class="fa fa-chevron-left"></i> KNX系统语音网关
+              <a href="/2018/01/24/数据-信息时代的通行证/" rel="next" title="数据--信息时代的通行证">
+                <i class="fa fa-chevron-left"></i> 数据--信息时代的通行证
               </a>
             
           </div>
@@ -533,7 +1073,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -544,7 +1084,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -555,7 +1095,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -605,7 +1145,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算"><span class="nav-number">1.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-EC2"><span class="nav-number">1.1.</span> <span class="nav-text">Amazon EC2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-EC2-Auto-Scaling"><span class="nav-number">1.2.</span> <span class="nav-text">Amazon EC2 Auto Scaling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-Container-Service-Amazon-ECS"><span class="nav-number">1.3.</span> <span class="nav-text">Amazon Elastic Container Service (Amazon ECS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-Container-Service-for-Kubernetes-Amazon-EKS"><span class="nav-number">1.4.</span> <span class="nav-text">Amazon Elastic Container Service for Kubernetes (Amazon EKS)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储"><span class="nav-number">2.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库"><span class="nav-number">3.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迁移"><span class="nav-number">4.</span> <span class="nav-text">迁移</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络和内容分发"><span class="nav-number">5.</span> <span class="nav-text">网络和内容分发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发人员工具"><span class="nav-number">6.</span> <span class="nav-text">开发人员工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管理工具"><span class="nav-number">7.</span> <span class="nav-text">管理工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#媒体服务"><span class="nav-number">8.</span> <span class="nav-text">媒体服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安全性、身份与合规性"><span class="nav-number">9.</span> <span class="nav-text">安全性、身份与合规性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">10.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习"><span class="nav-number">11.</span> <span class="nav-text">机器学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移动服务"><span class="nav-number">12.</span> <span class="nav-text">移动服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AR-和-VR"><span class="nav-number">13.</span> <span class="nav-text">AR 和 VR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用程序集成"><span class="nav-number">14.</span> <span class="nav-text">应用程序集成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#客户参与"><span class="nav-number">15.</span> <span class="nav-text">客户参与</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#企业生产力"><span class="nav-number">16.</span> <span class="nav-text">企业生产力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#桌面和应用程序流式处理"><span class="nav-number">17.</span> <span class="nav-text">桌面和应用程序流式处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物联网"><span class="nav-number">18.</span> <span class="nav-text">物联网</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏开发"><span class="nav-number">19.</span> <span class="nav-text">游戏开发</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算"><span class="nav-number">1.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-EC2"><span class="nav-number">1.1.</span> <span class="nav-text">Amazon EC2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-EC2-Auto-Scaling"><span class="nav-number">1.2.</span> <span class="nav-text">Amazon EC2 Auto Scaling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-Container-Service-Amazon-ECS"><span class="nav-number">1.3.</span> <span class="nav-text">Amazon Elastic Container Service (Amazon ECS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">突出特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景"><span class="nav-number">1.3.2.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-Container-Registry-（Amazon-ECR"><span class="nav-number">1.4.</span> <span class="nav-text">Amazon Elastic Container Registry （Amazon ECR)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-Container-Service-for-Kubernetes-Amazon-EKS"><span class="nav-number">1.5.</span> <span class="nav-text">Amazon Elastic Container Service for Kubernetes (Amazon EKS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-4"><span class="nav-number">1.5.1.</span> <span class="nav-text">突出特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Lightsail"><span class="nav-number">1.6.</span> <span class="nav-text">Amazon Lightsail</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-5"><span class="nav-number">1.6.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Batch"><span class="nav-number">1.7.</span> <span class="nav-text">AWS Batch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-6"><span class="nav-number">1.7.1.</span> <span class="nav-text">突出特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-2"><span class="nav-number">1.7.2.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Elastic-Beanstalk"><span class="nav-number">1.8.</span> <span class="nav-text">AWS Elastic Beanstalk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-7"><span class="nav-number">1.8.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Fargate"><span class="nav-number">1.9.</span> <span class="nav-text">AWS Fargate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-8"><span class="nav-number">1.9.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Lambda"><span class="nav-number">1.10.</span> <span class="nav-text">AWS Lambda</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-9"><span class="nav-number">1.10.1.</span> <span class="nav-text">突出特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-3"><span class="nav-number">1.10.2.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Serverless-Application-Repository"><span class="nav-number">1.11.</span> <span class="nav-text">AWS Serverless Application Repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VMware-Cloud-on-AWS"><span class="nav-number">1.12.</span> <span class="nav-text">VMware Cloud on AWS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储"><span class="nav-number">2.</span> <span class="nav-text">存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#S3"><span class="nav-number">2.1.</span> <span class="nav-text">S3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-Block-Store-EBS"><span class="nav-number">2.2.</span> <span class="nav-text">Amazon Elastic Block Store(EBS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-4"><span class="nav-number">2.2.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-File-System-EFS"><span class="nav-number">2.3.</span> <span class="nav-text">Amazon Elastic File System(EFS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-5"><span class="nav-number">2.3.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Glacier"><span class="nav-number">2.4.</span> <span class="nav-text">Amazon Glacier</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-6"><span class="nav-number">2.4.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storage-Gateway"><span class="nav-number">2.5.</span> <span class="nav-text">Storage Gateway</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库"><span class="nav-number">3.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Aurora"><span class="nav-number">3.1.</span> <span class="nav-text">Amazon Aurora</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-10"><span class="nav-number">3.1.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Relational-Database-Service-RDS"><span class="nav-number">3.2.</span> <span class="nav-text">Amazon Relational Database Service(RDS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DynamoDB"><span class="nav-number">3.3.</span> <span class="nav-text">DynamoDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-ElastiCache"><span class="nav-number">3.4.</span> <span class="nav-text">Amazon ElastiCache</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-11"><span class="nav-number">3.4.1.</span> <span class="nav-text">突出特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用"><span class="nav-number">3.4.2.</span> <span class="nav-text">典型应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redshift"><span class="nav-number">3.5.</span> <span class="nav-text">Redshift</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-12"><span class="nav-number">3.5.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Neptune"><span class="nav-number">3.6.</span> <span class="nav-text">Neptune</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-7"><span class="nav-number">3.6.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迁移"><span class="nav-number">4.</span> <span class="nav-text">迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Application-Discovery-Service-ADS"><span class="nav-number">4.1.</span> <span class="nav-text">AWS Application Discovery Service(ADS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Database-Migration-Service-DMS"><span class="nav-number">4.2.</span> <span class="nav-text">AWS Database Migration Service(DMS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Migration-Hub"><span class="nav-number">4.3.</span> <span class="nav-text">Migration Hub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Server-Migration-Service-SMS"><span class="nav-number">4.4.</span> <span class="nav-text">AWS Server Migration Service(SMS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Snowball"><span class="nav-number">4.5.</span> <span class="nav-text">AWS Snowball</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Snowball-Edge"><span class="nav-number">4.6.</span> <span class="nav-text">AWS Snowball Edge</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-8"><span class="nav-number">4.6.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Snowmobile"><span class="nav-number">4.7.</span> <span class="nav-text">AWS Snowmobile</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络和分发"><span class="nav-number">5.</span> <span class="nav-text">网络和分发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Virtual-Private-Cloud-VPC"><span class="nav-number">5.1.</span> <span class="nav-text">Amazon Virtual Private Cloud(VPC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-CloudFront"><span class="nav-number">5.2.</span> <span class="nav-text">Amazon CloudFront</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-9"><span class="nav-number">5.2.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Route-53"><span class="nav-number">5.3.</span> <span class="nav-text">Amazon Route 53</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-API-Gateway"><span class="nav-number">5.4.</span> <span class="nav-text">Amazon API Gateway</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Direct-Connect"><span class="nav-number">5.5.</span> <span class="nav-text">AWS Direct Connect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elastic-Load-Balancing-ELB"><span class="nav-number">5.6.</span> <span class="nav-text">Amazon Elastic Load Balancing(ELB)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-13"><span class="nav-number">5.6.1.</span> <span class="nav-text">突出特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-10"><span class="nav-number">5.6.2.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发人员工具"><span class="nav-number">6.</span> <span class="nav-text">开发人员工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CodeStar"><span class="nav-number">6.1.</span> <span class="nav-text">AWS CodeStar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-14"><span class="nav-number">6.1.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CodeCommit"><span class="nav-number">6.2.</span> <span class="nav-text">AWS CodeCommit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CodeBuild"><span class="nav-number">6.3.</span> <span class="nav-text">AWS CodeBuild</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CodeDeploy"><span class="nav-number">6.4.</span> <span class="nav-text">AWS CodeDeploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CodePipeline"><span class="nav-number">6.5.</span> <span class="nav-text">AWS CodePipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Cloud9"><span class="nav-number">6.6.</span> <span class="nav-text">AWS Cloud9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-X-Ray"><span class="nav-number">6.7.</span> <span class="nav-text">AWS X-Ray</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-命令行界面-CLI"><span class="nav-number">6.8.</span> <span class="nav-text">AWS 命令行界面(CLI)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管理工具"><span class="nav-number">7.</span> <span class="nav-text">管理工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CloudWatch"><span class="nav-number">7.1.</span> <span class="nav-text">CloudWatch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出功能"><span class="nav-number">7.1.1.</span> <span class="nav-text">突出功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Auto-Scaling"><span class="nav-number">7.2.</span> <span class="nav-text">AWS Auto Scaling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CloudFormation"><span class="nav-number">7.3.</span> <span class="nav-text">AWS CloudFormation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CloudTrail"><span class="nav-number">7.4.</span> <span class="nav-text">AWS CloudTrail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Config"><span class="nav-number">7.5.</span> <span class="nav-text">AWS Config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-OpsWorks"><span class="nav-number">7.6.</span> <span class="nav-text">AWS OpsWorks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Service-Catalog"><span class="nav-number">7.7.</span> <span class="nav-text">AWS Service Catalog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Systems-Manager"><span class="nav-number">7.8.</span> <span class="nav-text">AWS Systems Manager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Trusted-Advisor"><span class="nav-number">7.9.</span> <span class="nav-text">AWS Trusted Advisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Personal-Health-Dashboard"><span class="nav-number">7.10.</span> <span class="nav-text">AWS Personal Health Dashboard</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#媒体服务"><span class="nav-number">8.</span> <span class="nav-text">媒体服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Elastic-Transcoder"><span class="nav-number">8.1.</span> <span class="nav-text">Elastic Transcoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Kinesis-Video-Streams"><span class="nav-number">8.2.</span> <span class="nav-text">Amazon Kinesis Video Streams</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-11"><span class="nav-number">8.2.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Elemental-MediaConvert-视频转码"><span class="nav-number">8.3.</span> <span class="nav-text">AWS Elemental MediaConvert 视频转码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Elemental-MediaLive-实时视频处理"><span class="nav-number">8.4.</span> <span class="nav-text">AWS Elemental MediaLive 实时视频处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-12"><span class="nav-number">8.4.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Elemental-MediaPackage-基础媒体包"><span class="nav-number">8.5.</span> <span class="nav-text">AWS Elemental MediaPackage 基础媒体包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-15"><span class="nav-number">8.5.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Elemental-MediaStore-视频媒体存储"><span class="nav-number">8.6.</span> <span class="nav-text">AWS Elemental MediaStore 视频媒体存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Elemental-MediaTailor-视频广告嵌入"><span class="nav-number">8.7.</span> <span class="nav-text">AWS Elemental MediaTailor 视频广告嵌入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安全、身份和合规性"><span class="nav-number">9.</span> <span class="nav-text">安全、身份和合规性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Identity-amp-Access-Management-IAM"><span class="nav-number">9.1.</span> <span class="nav-text">Identity &amp; Access Management(IAM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Cloud-Directory"><span class="nav-number">9.2.</span> <span class="nav-text">Amazon Cloud Directory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Cognito"><span class="nav-number">9.3.</span> <span class="nav-text">Amazon Cognito</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Single-Sign-On-SSO"><span class="nav-number">9.4.</span> <span class="nav-text">AWS Single Sign-On(SSO)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-GuardDuty"><span class="nav-number">9.5.</span> <span class="nav-text">Amazon GuardDuty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Inspector"><span class="nav-number">9.6.</span> <span class="nav-text">Amazon Inspector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Macie"><span class="nav-number">9.7.</span> <span class="nav-text">Amazon Macie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Certificate-Manager"><span class="nav-number">9.8.</span> <span class="nav-text">AWS Certificate Manager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-CloudHSM"><span class="nav-number">9.9.</span> <span class="nav-text">AWS CloudHSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Directory-Service"><span class="nav-number">9.10.</span> <span class="nav-text">AWS Directory Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Key-Management-Service-KMX"><span class="nav-number">9.11.</span> <span class="nav-text">AWS Key Management Service(KMX)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Organizations"><span class="nav-number">9.12.</span> <span class="nav-text">Organizations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Shield"><span class="nav-number">9.13.</span> <span class="nav-text">AWS Shield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-WAF"><span class="nav-number">9.14.</span> <span class="nav-text">AWS WAF</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">10.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Athena-数据库查询"><span class="nav-number">10.1.</span> <span class="nav-text">Amazon Athena 数据库查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EMR"><span class="nav-number">10.2.</span> <span class="nav-text">EMR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-13"><span class="nav-number">10.2.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-CloudSearch-云搜索服务"><span class="nav-number">10.3.</span> <span class="nav-text">Amazon CloudSearch 云搜索服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Elasticsearch-Service-搜索分析引擎"><span class="nav-number">10.4.</span> <span class="nav-text">Amazon Elasticsearch Service 搜索分析引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Kinesis"><span class="nav-number">10.5.</span> <span class="nav-text">Amazon Kinesis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-14"><span class="nav-number">10.5.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Quicksight"><span class="nav-number">10.6.</span> <span class="nav-text">Amazon Quicksight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Data-Pipeline"><span class="nav-number">10.7.</span> <span class="nav-text">AWS Data Pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Glue"><span class="nav-number">10.8.</span> <span class="nav-text">AWS Glue</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习"><span class="nav-number">11.</span> <span class="nav-text">机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Sagemaker"><span class="nav-number">11.1.</span> <span class="nav-text">Amazon Sagemaker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Comprehend"><span class="nav-number">11.2.</span> <span class="nav-text">Amazon Comprehend</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Lex"><span class="nav-number">11.3.</span> <span class="nav-text">Amazon Lex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Polly"><span class="nav-number">11.4.</span> <span class="nav-text">Amazon Polly</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Rekognition"><span class="nav-number">11.5.</span> <span class="nav-text">Amazon Rekognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Machine-Learning"><span class="nav-number">11.6.</span> <span class="nav-text">Amazon Machine Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Translate"><span class="nav-number">11.7.</span> <span class="nav-text">Amazon Translate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Transcibe"><span class="nav-number">11.8.</span> <span class="nav-text">Amazon Transcibe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-DeepLens"><span class="nav-number">11.9.</span> <span class="nav-text">AWS DeepLens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Leaning-AMI"><span class="nav-number">11.10.</span> <span class="nav-text">Deep Leaning AMI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache-MXnet-on-AWS"><span class="nav-number">11.11.</span> <span class="nav-text">Apache MXnet on AWS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow-on-AWS"><span class="nav-number">11.12.</span> <span class="nav-text">TensorFlow on AWS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Mobile-Hub"><span class="nav-number">11.13.</span> <span class="nav-text">AWS Mobile Hub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-API-Gateway-1"><span class="nav-number">11.14.</span> <span class="nav-text">Amazon API Gateway</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Pinpoint"><span class="nav-number">11.15.</span> <span class="nav-text">Amazon Pinpoint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-AppSync"><span class="nav-number">11.16.</span> <span class="nav-text">AWS AppSync</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Device-Farm"><span class="nav-number">11.17.</span> <span class="nav-text">AWS Device Farm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Mobile-SDK"><span class="nav-number">11.18.</span> <span class="nav-text">AWS Mobile SDK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AR-和-VR"><span class="nav-number">12.</span> <span class="nav-text">AR 和 VR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Sumerian"><span class="nav-number">12.1.</span> <span class="nav-text">Amazon Sumerian</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用程序集成"><span class="nav-number">13.</span> <span class="nav-text">应用程序集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Step-Functions"><span class="nav-number">13.1.</span> <span class="nav-text">AWS Step Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Simple-Queue-Service-SQS"><span class="nav-number">13.2.</span> <span class="nav-text">Amazon Simple Queue Service (SQS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-16"><span class="nav-number">13.2.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Simple-Notification-Service-SNS"><span class="nav-number">13.3.</span> <span class="nav-text">Amazon Simple Notification Service (SNS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-MQ"><span class="nav-number">13.4.</span> <span class="nav-text">Amazon MQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#突出特点-17"><span class="nav-number">13.4.1.</span> <span class="nav-text">突出特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#企业生产力"><span class="nav-number">14.</span> <span class="nav-text">企业生产力</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Alexa-for-Business"><span class="nav-number">14.1.</span> <span class="nav-text">Alexa for Business</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Chime"><span class="nav-number">14.2.</span> <span class="nav-text">Amazon Chime</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-WorkDocs"><span class="nav-number">14.3.</span> <span class="nav-text">Amazon WorkDocs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#典型应用场景-15"><span class="nav-number">14.3.1.</span> <span class="nav-text">典型应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-WorkMail"><span class="nav-number">14.4.</span> <span class="nav-text">Amazon WorkMail</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#桌面和应用程序流处理"><span class="nav-number">15.</span> <span class="nav-text">桌面和应用程序流处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-WorkSpaces"><span class="nav-number">15.1.</span> <span class="nav-text">Amazon WorkSpaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-AppStream-2-0"><span class="nav-number">15.2.</span> <span class="nav-text">Amazon AppStream 2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-IoT-Core"><span class="nav-number">15.3.</span> <span class="nav-text">AWS IoT Core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-FreeRTOS"><span class="nav-number">15.4.</span> <span class="nav-text">Amazon FreeRTOS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-Greengrass"><span class="nav-number">15.5.</span> <span class="nav-text">AWS Greengrass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-IoT-1-Click"><span class="nav-number">15.6.</span> <span class="nav-text">AWS IoT 1-Click</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-IoT-Analytics"><span class="nav-number">15.7.</span> <span class="nav-text">AWS IoT Analytics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-IoT-Button"><span class="nav-number">15.8.</span> <span class="nav-text">AWS IoT Button</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-IoT-Device-Defender"><span class="nav-number">15.9.</span> <span class="nav-text">AWS IoT Device Defender</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-IoT-Device-Management"><span class="nav-number">15.10.</span> <span class="nav-text">AWS IoT Device Management</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏开发"><span class="nav-number">16.</span> <span class="nav-text">游戏开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-GameLift"><span class="nav-number">16.1.</span> <span class="nav-text">Amazon GameLift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-Lumberyard"><span class="nav-number">16.2.</span> <span class="nav-text">Amazon Lumberyard</span></a></li></ol></li></ol></div>
             
 
           </div>
