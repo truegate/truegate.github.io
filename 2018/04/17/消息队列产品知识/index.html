@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/04/17/img/2018/消息队列-提高吞吐.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/17/img/2018/消息队列-业务解耦.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/17/img/2018/消息队列-广播.png">
-<meta property="og:updated_time" content="2018-04-19T06:51:19.000Z">
+<meta property="og:updated_time" content="2018-04-19T06:53:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="消息中间件相关知识">
 <meta name="twitter:description" content="消息队列（Message Queue）已然发展成为云计算中间件的重要组件，它具有低耦合、可靠投递、广播、流量控制、最终一致性等一系列特点。 本文主要站在产品角度，探讨了消息队列常用的术语、应用场景以及成熟的中间件解决方案。最后以 AWS 为例，分析了云计算平台的消息中间件产品。">
@@ -434,11 +434,12 @@
 <li>多种语音和协议编写客户端，语言：Java, C, C++, C#, Ruby, Perl, Python, PHP。应用协议：OpenWire, Stomp REST, MQTT, XMPP, AMQP, WS Notification</li>
 <li>对 Spring 的支持，ActiveMQ 可以很容易内嵌到使用 Spring 的系统里面去，而且也支持 Spring2.0 的特性</li>
 <li>从设计上保证了高性能的集群，客户端-服务器，点对点</li>
-<li>支持多种传送协议：in-VM, TCP, SSL, NIO, UDP, JGroups, JXTA<h3 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h3>RabbitMQ 是基于 Erlang 语言编写的开源消息队列，是 AMQP 的标准实现。支持多种客户端，如：Python、Ruby、.NET、Java、JMS、C、PHP、ActionScript、XMPP、STOMP等，支持 AJAX，持久化。RabbitMQ 实现了代理（Broker）架构，消息在发送到客户端之前可以在中央节点上排队，用于在分布式系统中存储转发消息，在适宜于路由、负载均衡、消息持久化等场景。但相应的因为中央节点而增加了延迟，以及消息封装后也比较大，导致 RabbitMQ 的速度较慢。Erlang 环境也使得可扩展性不好。<blockquote>
+<li>支持多种传送协议：in-VM, TCP, SSL, NIO, UDP, JGroups, JXTA</li>
+</ul>
+<h3 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h3><p>RabbitMQ 是基于 Erlang 语言编写的开源消息队列，是 AMQP 的标准实现。支持多种客户端，如：Python、Ruby、.NET、Java、JMS、C、PHP、ActionScript、XMPP、STOMP等，支持 AJAX，持久化。RabbitMQ 实现了代理（Broker）架构，消息在发送到客户端之前可以在中央节点上排队，用于在分布式系统中存储转发消息，在适宜于路由、负载均衡、消息持久化等场景。但相应的因为中央节点而增加了延迟，以及消息封装后也比较大，导致 RabbitMQ 的速度较慢。Erlang 环境也使得可扩展性不好。</p>
+<blockquote>
 <p>场景应用：记账重试失败、通知服务等，消息不允许丢失的条件下使用</p>
 </blockquote>
-</li>
-</ul>
 <h3 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h3><p>Kafka 是 LinkedIn 于2010年12月开发并开源的一个分布式流平台，现在是Apache的顶级项目，它是一种 <strong>高性能跨语言的分布式 Pub/Sub</strong> 消息系统，它可以处理客户在网站中的所有动作流数据（如网页浏览、搜索以及其他用户的行为）。由于吞吐量的限制要求，这些数据通常是通过处理日志和日志聚合来获取的。 对于像 Hadoop 的一样的日志数据离线分析系统，又要求实时处理，这是一个可行的解决方案。Kafka 的目的是通过 Hadoop 的并行加载机制来统一线上和离线的消息处理，也是为了通过集群机来提供实时的消费。</p>
 <p>作为高吞吐量的分布式发布/订阅消息系统，Kafka 有如下特性：</p>
 <ul>
