@@ -366,40 +366,17 @@
 
       
         
-          
-            <h1 id="ESP32-配置运行-microPython"><a href="#ESP32-配置运行-microPython" class="headerlink" title="ESP32 配置运行 microPython"></a>ESP32 配置运行 microPython</h1><blockquote>
-<p>环境：
-  macOS with Python3.6
-  widora AIR</p>
+          <blockquote>
+<p>介绍如何在 ESP32 MCU 上配置microPython 环境，实现 Python 嵌入式开发。
+以点亮 LED 为例</p>
 </blockquote>
-<h2 id="下载固件并烧写"><a href="#下载固件并烧写" class="headerlink" title="下载固件并烧写"></a>下载固件并烧写</h2><ul>
-<li><p>进入 mpy 官网，下载对应 mcu 的 firmware：
-<a href="https://micropython.org/download#esp32">https://micropython.org/download#esp32</a></p>
-</li>
-<li><p>安装<code>esptool</code>烧写工具</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install esptool</span><br></pre></td></tr></table></figure>
-<ul>
-<li>将 ESP32 与 Computer 相连接，注意安装相应的 uart 驱动，找到挂载点:<code>/dev/tty.SLAB_USBtoUART</code></li>
-<li><p>烧写前，首先擦除原有固件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo esptool.py --chip esp32 --port /dev/tty.SLAB_USBtoUART erase_flash</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>之后，写入最新下载的firmware</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo esptool.py --chip esp32 --port /dev/tty.SLAB_USBtoUART write_flash -z 0x1000 ~/Downloads/esp32-XXXX</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h2><p>在 Computer 端，选择合适的串口连接程序，115200bps 8 N 1 通信参数，连接设备即可，Mac 推荐使用 ZOC7。
-连接后，看到如下情况即说明安装成功。
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="使用-Python"><a href="#使用-Python" class="headerlink" title="使用 Python"></a>使用 Python</h2><p>此时，可以直接在 Terminal 中进行 Python 程序开发</p>
-<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>保持传统，先向这个有趣的世界 say hello
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">print</span>(<span class="string">'hello world'</span>)</span><br><span class="line">hello world</span><br></pre></td></tr></table></figure></p>
-<h2 id="点亮板载-LED"><a href="#点亮板载-LED" class="headerlink" title="点亮板载 LED"></a>点亮板载 LED</h2><p>widora 提供了一颗板载 LED，连接在 GPIO_25 引脚，正逻辑，高电平亮，低电平灭。
-mpy 提供了 machine 库给到开发者操作硬件接口，我们可以尝试
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># create an I/O pin in output mode</span></span><br><span class="line">p = Pin(<span class="number">25</span>, Pin.OUT)</span><br><span class="line"></span><br><span class="line"><span class="comment"># define global statement</span></span><br><span class="line">state = <span class="number">1</span></span><br><span class="line">gap = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># toggle the pin</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    p.value(state)</span><br><span class="line">    state = <span class="number">1</span> - state</span><br><span class="line">    time.sleep(gap)</span><br></pre></td></tr></table></figure></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/17/ESP32 配置运行 micropy/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -871,61 +848,16 @@ mpy 提供了 machine 库给到开发者操作硬件接口，我们可以尝试
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。
-本文总结了常用的三种方法</p>
-</blockquote>
-<p>实验环境：</p>
-<ul>
-<li><code>OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8</code></li>
-</ul>
-<h2 id="方法一：借助-systemd-工具管理"><a href="#方法一：借助-systemd-工具管理" class="headerlink" title="方法一：借助 systemd 工具管理"></a>方法一：借助 systemd 工具管理</h2><p>systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。</p>
-<p>配置文件位于 <code>/etc/systemd/</code> 路径下。具体参阅：</p>
-<ul>
-<li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">Systemd 入门教程：命令篇 / 阮一峰</a></li>
-</ul>
-<p><strong>简单实现 systemd 管理的过程方法</strong></p>
-<p><strong>第一步 创建 .service 文件</strong>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/systemd/system/[name].serveice</span><br></pre></td></tr></table></figure></p>
-<p>样例如下，实现目的是确保 Network Ready 后再启动目标进程
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Run after network</span><br><span class="line">After=network.target multi-user.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">ExecStart=/home/order</span><br><span class="line">ExecReload=/home/order</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<ul>
-<li>[Unit] 中 <code>After</code> 定义了启动顺序，可以通过 <code>systemd-analyze critical-chain</code> 来确定具体的内容；</li>
-<li>[Service] 中 <code>ExecStart / ExecReload</code> 定义了服务所调取的脚本。</li>
-</ul>
-</blockquote>
-<p><strong>第二步 激活 .service 文件</strong>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> [name].serveice</span><br><span class="line">$ systemctl daemon-reload</span><br></pre></td></tr></table></figure></p>
-<h2 id="方法二：借助-init-d-实现"><a href="#方法二：借助-init-d-实现" class="headerlink" title="方法二：借助 init.d 实现"></a>方法二：借助 init.d 实现</h2><p>init 进程是 Linux 历史悠久的进程启动方式，系统的 <code>/etc/init.d/</code> 目录维护初始化服务，具体可以参阅：</p>
-<ul>
-<li><p><a href="http://manpages.ubuntu.com/manpages/xenial/man8/update-rc.d.8.html">Update-rc.d - install and remove System-V style init script links</a> </p>
-</li>
-<li><p><a href="https://wiki.debian.org/LSBInitScripts">LSBInitScripts</a> </p>
-</li>
-</ul>
-<p><strong>实现 init.d 服务管理的过程方法</strong></p>
-<p><strong>第一步 创建 service 文件</strong>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/init.d/homebase  <span class="comment"># Fedora系统目录路径在 /etc/rc.d/init.d/</span></span><br></pre></td></tr></table></figure></p>
-<p>内容如下，<code>Required-Start</code> 项指明了启动前置条件</p>
-<blockquote>
-<p><strong>Dietpi_V154 Kernel 3.4.113</strong> <del>Required-Start: $network</del> 测试失败</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># /etc/init.d/homebase</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">### BEGIN INIT INFO</span></span><br><span class="line"><span class="comment"># Provides: Quentin</span></span><br><span class="line"><span class="comment"># Required-Start: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Required-Stop: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Default-Start: 2 3 4 5</span></span><br><span class="line"><span class="comment"># Default-Stop: 0 1 6</span></span><br><span class="line"><span class="comment"># Short-Description: homebase gateway</span></span><br><span class="line"><span class="comment"># Description: This service is used to start ssdp and jsonrpc serice for homebase</span></span><br><span class="line"><span class="comment">### END INIT INFO</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line">    start)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Starting Homebase SSDP"</span></span><br><span class="line">        python3 /root/homebase-ssdp/homebase.py &amp;</span><br><span class="line">        ;;</span><br><span class="line">    stop)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Stopping Homebase SSDP"</span></span><br><span class="line">        <span class="built_in">kill</span> $( ps aux | grep -m 1 <span class="string">'python3 /root/homebase/homebase.py'</span> | awk <span class="string">'&#123; print $2 &#125;'</span> )</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Usage: service Homebase SSDP start|stop"</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
-<p><strong>第二步 增加可执行权限</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x /etc/init.d/homebase</span><br></pre></td></tr></table></figure>
-<p><strong>第三步 设置开机自启</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update-rc.d homebase defaults</span><br></pre></td></tr></table></figure>
-<p><strong>第四步 service 管理技巧</strong></p>
-<p>可以随时通过 <code>service XXX start|stop|restart</code> 控制程序状态，还可以通过status查看服务的详细运行信息
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service XXX status    <span class="comment"># 查看服务状态</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="方法三：借助-rc-local-实现入口"><a href="#方法三：借助-rc-local-实现入口" class="headerlink" title="方法三：借助 rc.local 实现入口"></a>方法三：借助 rc.local 实现入口</h2><p><code>/etc/rc.local</code> 是系统初始化完成后会执行的脚本，可以安全的在里面添加自定义程序的启动入口，这种方法最为常用。
-该文件的格式一般为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
-<p>入口指令需要添加在 <code>exit 0</code> 之前。</p>
-
-          
+本文总结了常用的三种方法
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/04/Linux-autostart/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1075,25 +1007,16 @@ mpy 提供了 machine 库给到开发者操作硬件接口，我们可以尝试
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行，
-本文将分享 Python 获取本机 IP 的方法</p>
-</blockquote>
-<p>实验环境：</p>
-<ul>
-<li><code>Python：V3.6.3</code></li>
-<li><code>OS: Ubuntu_12.04 / Ubuntu_17.10 / OS_X_10.11.6</code></li>
-</ul>
-<h3 id="方法一：通过-hostname-获取"><a href="#方法一：通过-hostname-获取" class="headerlink" title="方法一：通过 hostname 获取"></a>方法一：通过 hostname 获取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">print(socket.gethostbyname(socket.gethostname()))</span><br></pre></td></tr></table></figure>
-<p>该方法采用 hostname 查询网络地址，较简单但不可靠。以 Ubuntu 17.10 实测为例，因为系统 <code>/etc/host</code> 文件对 hostname 进行了配置，会返回以下结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> socket</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(socket.gethostbyname(socket.gethostname())) </span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
-<h3 id="方法二：通过-UDP-包获取"><a href="#方法二：通过-UDP-包获取" class="headerlink" title="方法二：通过 UDP 包获取"></a>方法二：通过 UDP 包获取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    udp.connect((<span class="string">'8.8.8.8'</span>, <span class="number">8991</span>))</span><br><span class="line">    IP = udp.getsockname()[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">except</span> OSError:</span><br><span class="line">    print(<span class="string">'Network is unreachable'</span>)</span><br><span class="line">    IP = <span class="string">'Null'</span></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    udp.close()</span><br><span class="line">    print(IP)</span><br></pre></td></tr></table></figure>
-<p>此方法会生成一个 UDP Socket 并从 UDP 协议头中获取本机 IP。不会真实的向外部发包，但是会申请具体的 UDP 端口，注意避免重复调用。</p>
-<p><strong>需要注意确保在系统 network 就绪后方可获取 IP，改进如下：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_ip</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> IP</span><br><span class="line">    udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        udp.connect((<span class="string">'8.8.8.8'</span>, <span class="number">8991</span>))</span><br><span class="line">        IP = udp.getsockname()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        print(<span class="string">'Network is unreachable'</span>)</span><br><span class="line">        IP = <span class="string">'Null'</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        udp.close()</span><br><span class="line"></span><br><span class="line">wait_network = <span class="keyword">True</span></span><br><span class="line">IP = <span class="string">'Null'</span></span><br><span class="line"><span class="keyword">while</span> wait_network:</span><br><span class="line">    get_ip()</span><br><span class="line">    <span class="keyword">if</span> IP != <span class="string">'Null'</span>:</span><br><span class="line">        wait_network = <span class="keyword">False</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">print(IP)</span><br></pre></td></tr></table></figure>
-
-          
+本文将分享 Python 获取本机 IP 的方法
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/04/python-getip/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1243,18 +1166,15 @@ mpy 提供了 machine 库给到开发者操作硬件接口，我们可以尝试
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
-
-          
+          <blockquote>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/30/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1356,7 +1276,7 @@ mpy 提供了 machine 库给到开发者操作硬件接口，我们可以尝试
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

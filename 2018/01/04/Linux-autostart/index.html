@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。 配置文件位">
+<meta name="description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法">
 <meta name="keywords" content="linux service">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 开机自启程序">
 <meta property="og:url" content="http://yoursite.com/2018/01/04/Linux-autostart/index.html">
 <meta property="og:site_name" content="年华易逝 活在当下">
-<meta property="og:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。 配置文件位">
+<meta property="og:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-05T07:34:01.000Z">
+<meta property="og:updated_time" content="2018-04-19T02:57:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 开机自启程序">
-<meta name="twitter:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法  实验环境：  OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8  方法一：借助 systemd 工具管理systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。 配置文件位">
+<meta name="twitter:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法">
 
 
 
@@ -365,7 +365,8 @@
       
         <blockquote>
 <p>在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。
-本文总结了常用的三种方法</p>
+本文总结了常用的三种方法
+<a id="more"></a></p>
 </blockquote>
 <p>实验环境：</p>
 <ul>
@@ -391,9 +392,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> [name].serveice</span><br><span class="line">$ systemctl daemon-reload</span><br></pre></td></tr></table></figure></p>
 <h2 id="方法二：借助-init-d-实现"><a href="#方法二：借助-init-d-实现" class="headerlink" title="方法二：借助 init.d 实现"></a>方法二：借助 init.d 实现</h2><p>init 进程是 Linux 历史悠久的进程启动方式，系统的 <code>/etc/init.d/</code> 目录维护初始化服务，具体可以参阅：</p>
 <ul>
-<li><p><a href="http://manpages.ubuntu.com/manpages/xenial/man8/update-rc.d.8.html">Update-rc.d - install and remove System-V style init script links</a> </p>
+<li><p><a href="http://manpages.ubuntu.com/manpages/xenial/man8/update-rc.d.8.html">Update-rc.d - install and remove System-V style init script links</a></p>
 </li>
-<li><p><a href="https://wiki.debian.org/LSBInitScripts">LSBInitScripts</a> </p>
+<li><p><a href="https://wiki.debian.org/LSBInitScripts">LSBInitScripts</a></p>
 </li>
 </ul>
 <p><strong>实现 init.d 服务管理的过程方法</strong></p>
@@ -403,7 +404,7 @@
 <blockquote>
 <p><strong>Dietpi_V154 Kernel 3.4.113</strong> <del>Required-Start: $network</del> 测试失败</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># /etc/init.d/homebase</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">### BEGIN INIT INFO</span></span><br><span class="line"><span class="comment"># Provides: Quentin</span></span><br><span class="line"><span class="comment"># Required-Start: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Required-Stop: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Default-Start: 2 3 4 5</span></span><br><span class="line"><span class="comment"># Default-Stop: 0 1 6</span></span><br><span class="line"><span class="comment"># Short-Description: homebase gateway</span></span><br><span class="line"><span class="comment"># Description: This service is used to start ssdp and jsonrpc serice for homebase</span></span><br><span class="line"><span class="comment">### END INIT INFO</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line">    start)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Starting Homebase SSDP"</span></span><br><span class="line">        python3 /root/homebase-ssdp/homebase.py &amp;</span><br><span class="line">        ;;</span><br><span class="line">    stop)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Stopping Homebase SSDP"</span></span><br><span class="line">        <span class="built_in">kill</span> $( ps aux | grep -m 1 <span class="string">'python3 /root/homebase/homebase.py'</span> | awk <span class="string">'&#123; print $2 &#125;'</span> )</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Usage: service Homebase SSDP start|stop"</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># /etc/init.d/homebase</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### BEGIN INIT INFO</span></span><br><span class="line"><span class="comment"># Provides: Quentin</span></span><br><span class="line"><span class="comment"># Required-Start: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Required-Stop: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Default-Start: 2 3 4 5</span></span><br><span class="line"><span class="comment"># Default-Stop: 0 1 6</span></span><br><span class="line"><span class="comment"># Short-Description: homebase gateway</span></span><br><span class="line"><span class="comment"># Description: This service is used to start ssdp and jsonrpc serice for homebase</span></span><br><span class="line"><span class="comment">### END INIT INFO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line">    start)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Starting Homebase SSDP"</span></span><br><span class="line">        python3 /root/homebase-ssdp/homebase.py &amp;</span><br><span class="line">        ;;</span><br><span class="line">    stop)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Stopping Homebase SSDP"</span></span><br><span class="line">        <span class="built_in">kill</span> $( ps aux | grep -m 1 <span class="string">'python3 /root/homebase/homebase.py'</span> | awk <span class="string">'&#123; print $2 &#125;'</span> )</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Usage: service Homebase SSDP start|stop"</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
 <p><strong>第二步 增加可执行权限</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x /etc/init.d/homebase</span><br></pre></td></tr></table></figure>
 <p><strong>第三步 设置开机自启</strong></p>
@@ -433,6 +434,8 @@
         <div class="post-tags">
           
             <a href="/tags/LINUX/" rel="tag"># LINUX</a>
+          
+            <a href="/tags/原创/" rel="tag"># 原创</a>
           
         </div>
       
@@ -566,7 +569,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行， 本文将分享 Python 获取本机 IP 的方法  实验环境：  Python：V3.6.3 OS: Ubuntu_12.04 / Ubuntu_17.10 / OS_X_10.11.6  方法一：通过 hostname 获取12import socketprint(socket.gethostbynam">
+<meta name="description" content="在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行， 本文将分享 Python 获取本机 IP 的方法">
 <meta name="keywords" content="ip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 优雅的获取本机 IP 地址">
 <meta property="og:url" content="http://yoursite.com/2018/01/04/python-getip/index.html">
 <meta property="og:site_name" content="年华易逝 活在当下">
-<meta property="og:description" content="在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行， 本文将分享 Python 获取本机 IP 的方法  实验环境：  Python：V3.6.3 OS: Ubuntu_12.04 / Ubuntu_17.10 / OS_X_10.11.6  方法一：通过 hostname 获取12import socketprint(socket.gethostbynam">
+<meta property="og:description" content="在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行， 本文将分享 Python 获取本机 IP 的方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-04T14:13:36.000Z">
+<meta property="og:updated_time" content="2018-04-19T02:57:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 优雅的获取本机 IP 地址">
-<meta name="twitter:description" content="在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行， 本文将分享 Python 获取本机 IP 的方法  实验环境：  Python：V3.6.3 OS: Ubuntu_12.04 / Ubuntu_17.10 / OS_X_10.11.6  方法一：通过 hostname 获取12import socketprint(socket.gethostbynam">
+<meta name="twitter:description" content="在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行， 本文将分享 Python 获取本机 IP 的方法">
 
 
 
@@ -365,7 +365,8 @@
       
         <blockquote>
 <p>在通过 Python 启用 UPnP 网络注册服务时，需要获取本机 IP 地址后才可运行，
-本文将分享 Python 获取本机 IP 的方法</p>
+本文将分享 Python 获取本机 IP 的方法
+<a id="more"></a></p>
 </blockquote>
 <p>实验环境：</p>
 <ul>
@@ -374,7 +375,7 @@
 </ul>
 <h3 id="方法一：通过-hostname-获取"><a href="#方法一：通过-hostname-获取" class="headerlink" title="方法一：通过 hostname 获取"></a>方法一：通过 hostname 获取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">print(socket.gethostbyname(socket.gethostname()))</span><br></pre></td></tr></table></figure>
 <p>该方法采用 hostname 查询网络地址，较简单但不可靠。以 Ubuntu 17.10 实测为例，因为系统 <code>/etc/host</code> 文件对 hostname 进行了配置，会返回以下结果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> socket</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(socket.gethostbyname(socket.gethostname())) </span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> socket</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(socket.gethostbyname(socket.gethostname()))</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
 <h3 id="方法二：通过-UDP-包获取"><a href="#方法二：通过-UDP-包获取" class="headerlink" title="方法二：通过 UDP 包获取"></a>方法二：通过 UDP 包获取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    udp.connect((<span class="string">'8.8.8.8'</span>, <span class="number">8991</span>))</span><br><span class="line">    IP = udp.getsockname()[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">except</span> OSError:</span><br><span class="line">    print(<span class="string">'Network is unreachable'</span>)</span><br><span class="line">    IP = <span class="string">'Null'</span></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    udp.close()</span><br><span class="line">    print(IP)</span><br></pre></td></tr></table></figure>
 <p>此方法会生成一个 UDP Socket 并从 UDP 协议头中获取本机 IP。不会真实的向外部发包，但是会申请具体的 UDP 端口，注意避免重复调用。</p>
 <p><strong>需要注意确保在系统 network 就绪后方可获取 IP，改进如下：</strong></p>
@@ -397,6 +398,8 @@
         <div class="post-tags">
           
             <a href="/tags/PYTHON/" rel="tag"># PYTHON</a>
+          
+            <a href="/tags/原创/" rel="tag"># 原创</a>
           
         </div>
       
@@ -530,7 +533,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
