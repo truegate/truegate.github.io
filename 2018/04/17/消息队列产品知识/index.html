@@ -89,10 +89,10 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/传统串行处理.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/传统并行处理.png">
-<meta property="og:image" content="http://chuantu.biz/t6/289/1524123970x-1404750322.png">
-<meta property="og:image" content="http://chuantu.biz/t6/289/1524124000x-1404750322.png">
-<meta property="og:image" content="http://chuantu.biz/t6/289/1524124018x-1404750322.png">
-<meta property="og:updated_time" content="2020-10-20T07:27:54.799Z">
+<meta property="og:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/提高吞吐.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/业务解耦.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/广播.png">
+<meta property="og:updated_time" content="2020-10-20T07:37:10.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="消息中间件产品知识">
 <meta name="twitter:description" content="消息队列（Message Queue）已然发展成为云计算中间件的重要组件，它具有低耦合、可靠投递、广播、流量控制、最终一致性等一系列特点。 本文主要站在产品角度，探讨了消息队列常用的术语、应用场景以及成熟的中间件解决方案。最后以 AWS 为例，分析了云计算平台的消息中间件产品。">
@@ -403,11 +403,11 @@
 传统并行处理
 <img src="传统并行处理.png" alt="传统并行处理">
 引入消息队列，将一部分非必须的业务逻辑采用异步处理，改造后的架构如下：
-<img src="http://chuantu.biz/t6/289/1524123970x-1404750322.png" alt="消息队列-提高吞吐">
+<img src="提高吞吐.png" alt="消息队列-提高吞吐">
 通过将发送邮件、发送短信功能的异步处理，可以将注册流程的响应时间提升到 55ms。</p>
 <p>假设 CPU 每秒的吞吐量是 100 次，则传统串行方式 1 秒内 CPU 可处理的请求量 6 次（1000/150），传统并行方式是 10 次（1000/100），异步处理则可以提升到 18 次（1000/55）。</p>
 <h3 id="业务解耦"><a href="#业务解耦" class="headerlink" title="业务解耦"></a>业务解耦</h3><p>从上例应用可以看出，消息队列的异步处理机制能够有效的实现不同业务功能之间的解耦合。举例说明，在电子商务领域，常使用消息队列来实现 <strong>订单系统</strong> 与 <strong>库存系统</strong> 的解耦。业务系统的解耦合有很多好处，通俗来讲可以有效避免由于库存系统宕机等异常情况而导致的订单系统功能失败的情况。
-<img src="http://chuantu.biz/t6/289/1524124000x-1404750322.png" alt="消息队列-业务解耦"></p>
+<img src="业务解耦.png" alt="消息队列-业务解耦"></p>
 <h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><p>在业务解耦的同时，利用队列的容量上限，可以实现对激增流量的削峰处理。我们知道，在面对激增的访问请求时，上下游的处理能力是不一样的。例如，Web 前端可以通过 Nginx 搭配负载均衡设备实现每秒上千万的并发请求，但数据库的处理能力却非常有限，SSD 加分库分表的单机处理能力只在万级别。</p>
 <p>因此在有激增流量的场景下，为了避免激增的请求导致应用宕机，通常会采用消息队列，实现上下游系统的内容转储。例如在秒杀或团抢活动，应用非常广泛，主要有以下几点好处：</p>
 <ul>
@@ -416,7 +416,7 @@
 <li>可以实现用户请求和订单业务系统的异步处理</li>
 </ul>
 <h3 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h3><p>利用 Pub/Sub 模式，可以轻松实现消息的广播。在传统实现下，若不采用消息队列，每当接入一个新的业务方，势必需要进行一次接口联调，降低效率也徒增系统的不稳定性。引入消息队列后，消息生产者只需要确保消息准确送达到队列，下游的消费者自行维护订阅即可。
-<img src="http://chuantu.biz/t6/289/1524124018x-1404750322.png" alt="消息队列-广播">
+<img src="广播.png" alt="消息队列-广播">
 <strong><em>使用时，注意 Pub/Sub 模式的时间依赖性</em></strong></p>
 <h3 id="最终一致性"><a href="#最终一致性" class="headerlink" title="最终一致性"></a>最终一致性</h3><p>最终一致性指的是两个系统的状态保持一致，要么都成功、要么都失败。是分布式系统的数据同步、金融/电商领域资金流转系统的重要考虑点。</p>
 <p>利用消息队列实现最终一致性的方法可以简要描述为：主要利用“记录”和“补偿”的方式，在事情成功完成之前，始终记录事情的详情，直到收到接收方的“成功”应答后，再清理掉事情记录。对于失败和超时情况，则依靠定时任务实现重复调取，直到成功为止。</p>
@@ -619,7 +619,7 @@ ActiveMQ 的主要特性有：</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
