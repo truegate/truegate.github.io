@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="linux service" />
+  <meta name="keywords" content="原创,效率工具," />
 
 
 
@@ -79,18 +79,25 @@
 
 
 
-<meta name="description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法">
-<meta name="keywords" content="linux service">
+<meta name="description" content="在与开发同学交流中，发现了一款绘制图表的轻量级工具- PlantUML，通过简单易学的标记语言，可以快速实现多种类型图表的绘制。此外，借助这个工具编辑的各类型图表，还可以轻松融入 Markdown，为产品工作带来非常大的便利。 深感与 PlantUML 相见恨晚，遂产生了在产品团队内部推广的想法，并编写此文档，作为产品同学学习 PlantUML 的入门资料。通过几小时的学习，四位产品小伙伴（无开">
+<meta name="keywords" content="原创,效率工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux 开机自启程序">
-<meta property="og:url" content="http://yoursite.com/2018/01/04/Linux-autostart/index.html">
+<meta property="og:title" content="使用VSCode完成图表绘制-PlantUML使用介绍">
+<meta property="og:url" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/index.html">
 <meta property="og:site_name" content="年华易逝 活在当下">
-<meta property="og:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法">
+<meta property="og:description" content="在与开发同学交流中，发现了一款绘制图表的轻量级工具- PlantUML，通过简单易学的标记语言，可以快速实现多种类型图表的绘制。此外，借助这个工具编辑的各类型图表，还可以轻松融入 Markdown，为产品工作带来非常大的便利。 深感与 PlantUML 相见恨晚，遂产生了在产品团队内部推广的想法，并编写此文档，作为产品同学学习 PlantUML 的入门资料。通过几小时的学习，四位产品小伙伴（无开">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T16:19:41.000Z">
+<meta property="og:image" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/pic/plug_in.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/pic/new_file.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/pic/code.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/pic/graph.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/pic/shell.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/pic/export.png">
+<meta property="og:updated_time" content="2020-10-20T08:04:48.632Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 开机自启程序">
-<meta name="twitter:description" content="在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。 本文总结了常用的三种方法">
+<meta name="twitter:title" content="使用VSCode完成图表绘制-PlantUML使用介绍">
+<meta name="twitter:description" content="在与开发同学交流中，发现了一款绘制图表的轻量级工具- PlantUML，通过简单易学的标记语言，可以快速实现多种类型图表的绘制。此外，借助这个工具编辑的各类型图表，还可以轻松融入 Markdown，为产品工作带来非常大的便利。 深感与 PlantUML 相见恨晚，遂产生了在产品团队内部推广的想法，并编写此文档，作为产品同学学习 PlantUML 的入门资料。通过几小时的学习，四位产品小伙伴（无开">
+<meta name="twitter:image" content="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/pic/plug_in.png">
 
 
 
@@ -120,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/04/Linux-autostart/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/"/>
 
 
 
 
 
-  <title>Linux 开机自启程序 | 年华易逝 活在当下</title>
+  <title>使用VSCode完成图表绘制-PlantUML使用介绍 | 年华易逝 活在当下</title>
   
 
 
@@ -263,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/04/Linux-autostart/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大钳子">
@@ -280,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux 开机自启程序</h1>
+          <h1 class="post-title" itemprop="name headline">使用VSCode完成图表绘制-PlantUML使用介绍</h1>
         
 
         <div class="post-meta">
@@ -292,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-04T22:17:02+08:00">
-                2018-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-20T16:00:18+08:00">
+                2020-10-20
               </time>
             
 
@@ -315,8 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/产品/" itemprop="url" rel="index">
+                    <span itemprop="name">产品</span>
                   </a>
                 </span>
 
@@ -333,9 +340,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/04/Linux-autostart/#comments" itemprop="discussionUrl">
+                <a href="/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/01/04/Linux-autostart/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -364,58 +371,64 @@
 
       
         <blockquote>
-<p>在开发智能硬件产品时，经常需要在 Linux 系统下，设置程序随系统启动而自动运行。
-本文总结了常用的三种方法
-<a id="more"></a></p>
+<p>在与开发同学交流中，发现了一款绘制图表的轻量级工具- PlantUML，通过简单易学的标记语言，可以快速实现多种类型图表的绘制。此外，借助这个工具编辑的各类型图表，还可以轻松融入 Markdown，为产品工作带来非常大的便利。</p>
+<p>深感与 PlantUML 相见恨晚，遂产生了在产品团队内部推广的想法，并编写此文档，作为产品同学学习 PlantUML 的入门资料。通过几小时的学习，四位产品小伙伴（无开发基础）已能上手使用。</p>
 </blockquote>
-<p>实验环境：</p>
-<ul>
-<li><code>OS: Ubuntu_12.04 / Ubuntu_17.10 / Dietpi_V154 / Raspbian_8</code></li>
+<a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="关于-PlantUML"><a href="#关于-PlantUML" class="headerlink" title="关于 PlantUML"></a>关于 PlantUML</h3><p>PlantUML 定义了一套快速绘图的语言规则，基于 Java 环境完成最终的图表绘制，支持导出各种格式的位图及 SVG 矢量图。是 UML 图及其他逻辑图表的高效制作工具。
+查看  <a href="https://plantuml.com/zh/">https://plantuml.com/zh/</a>  获取PlantUML的详细语法及功能介绍。</p>
+<h4 id="PlantUML-图表类型及语法大全"><a href="#PlantUML-图表类型及语法大全" class="headerlink" title="PlantUML 图表类型及语法大全"></a>PlantUML 图表类型及语法大全</h4><ul>
+<li><a href="https://plantuml.com/zh/sequence-diagram">时序图</a></li>
+<li><a href="https://plantuml.com/zh/use-case-diagram">用例图</a></li>
+<li><a href="https://plantuml.com/zh/class-diagram">类图</a></li>
+<li><a href="https://plantuml.com/zh/activity-diagram-beta">活动图</a></li>
+<li><a href="https://plantuml.com/zh/component-diagram">组件图</a></li>
+<li><a href="https://plantuml.com/zh/state-diagram">状态图</a></li>
+<li><a href="https://plantuml.com/zh/object-diagram">对象图</a></li>
+<li><a href="https://plantuml.com/zh/deployment-diagram">部署图</a></li>
+<li><a href="https://plantuml.com/zh/timing-diagram">定时图</a></li>
+<li><a href="https://plantuml.com/zh/salt">线框图形界面</a></li>
+<li><a href="https://plantuml.com/zh/archimate-diagram">架构图</a></li>
+<li><a href="https://plantuml.com/zh/activity-diagram-beta#sdl">规范和描述语言 (SDL)</a></li>
+<li><a href="https://plantuml.com/zh/ditaa">Ditaa diagram</a></li>
+<li><a href="https://plantuml.com/zh/gantt-diagram">甘特图</a></li>
+<li><a href="https://plantuml.com/zh/mindmap-diagram">思维导图</a></li>
+<li><a href="https://plantuml.com/zh/wbs-diagram">Work Breakdown Structure diagram</a></li>
+<li><a href="https://plantuml.com/zh/ascii-math">以 AsciiMath 或 JLaTeXMath 符号的数学公式</a></li>
+<li><a href="https://plantuml.com/zh/ie-diagram">Entity Relationship diagram</a></li>
 </ul>
-<h2 id="方法一：借助-systemd-工具管理"><a href="#方法一：借助-systemd-工具管理" class="headerlink" title="方法一：借助 systemd 工具管理"></a>方法一：借助 systemd 工具管理</h2><p>systemd 是一款 Linux 系统工具，用来启动守护进程，已成为众多 Linux 的标准配置。</p>
-<p>配置文件位于 <code>/etc/systemd/</code> 路径下。具体参阅：</p>
-<ul>
-<li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html">Systemd 入门教程：命令篇 / 阮一峰</a></li>
-</ul>
-<p><strong>简单实现 systemd 管理的过程方法</strong></p>
-<p><strong>第一步 创建 .service 文件</strong>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/systemd/system/[name].serveice</span><br></pre></td></tr></table></figure></p>
-<p>样例如下，实现目的是确保 Network Ready 后再启动目标进程
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Run after network</span><br><span class="line">After=network.target multi-user.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">ExecStart=/home/order</span><br><span class="line">ExecReload=/home/order</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<ul>
-<li>[Unit] 中 <code>After</code> 定义了启动顺序，可以通过 <code>systemd-analyze critical-chain</code> 来确定具体的内容；</li>
-<li>[Service] 中 <code>ExecStart / ExecReload</code> 定义了服务所调取的脚本。</li>
-</ul>
-</blockquote>
-<p><strong>第二步 激活 .service 文件</strong>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> [name].serveice</span><br><span class="line">$ systemctl daemon-reload</span><br></pre></td></tr></table></figure></p>
-<h2 id="方法二：借助-init-d-实现"><a href="#方法二：借助-init-d-实现" class="headerlink" title="方法二：借助 init.d 实现"></a>方法二：借助 init.d 实现</h2><p>init 进程是 Linux 历史悠久的进程启动方式，系统的 <code>/etc/init.d/</code> 目录维护初始化服务，具体可以参阅：</p>
-<ul>
-<li><p><a href="http://manpages.ubuntu.com/manpages/xenial/man8/update-rc.d.8.html">Update-rc.d - install and remove System-V style init script links</a></p>
-</li>
-<li><p><a href="https://wiki.debian.org/LSBInitScripts">LSBInitScripts</a></p>
-</li>
-</ul>
-<p><strong>实现 init.d 服务管理的过程方法</strong></p>
-<p><strong>第一步 创建 service 文件</strong>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/init.d/homebase  <span class="comment"># Fedora系统目录路径在 /etc/rc.d/init.d/</span></span><br></pre></td></tr></table></figure></p>
-<p>内容如下，<code>Required-Start</code> 项指明了启动前置条件</p>
-<blockquote>
-<p><strong>Dietpi_V154 Kernel 3.4.113</strong> <del>Required-Start: $network</del> 测试失败</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># /etc/init.d/homebase</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### BEGIN INIT INFO</span></span><br><span class="line"><span class="comment"># Provides: Quentin</span></span><br><span class="line"><span class="comment"># Required-Start: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Required-Stop: $network $remote_fs $syslog</span></span><br><span class="line"><span class="comment"># Default-Start: 2 3 4 5</span></span><br><span class="line"><span class="comment"># Default-Stop: 0 1 6</span></span><br><span class="line"><span class="comment"># Short-Description: homebase gateway</span></span><br><span class="line"><span class="comment"># Description: This service is used to start ssdp and jsonrpc serice for homebase</span></span><br><span class="line"><span class="comment">### END INIT INFO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></span><br><span class="line">    start)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Starting Homebase SSDP"</span></span><br><span class="line">        python3 /root/homebase-ssdp/homebase.py &amp;</span><br><span class="line">        ;;</span><br><span class="line">    stop)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Stopping Homebase SSDP"</span></span><br><span class="line">        <span class="built_in">kill</span> $( ps aux | grep -m 1 <span class="string">'python3 /root/homebase/homebase.py'</span> | awk <span class="string">'&#123; print $2 &#125;'</span> )</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Usage: service Homebase SSDP start|stop"</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
-<p><strong>第二步 增加可执行权限</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x /etc/init.d/homebase</span><br></pre></td></tr></table></figure>
-<p><strong>第三步 设置开机自启</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ update-rc.d homebase defaults</span><br></pre></td></tr></table></figure>
-<p><strong>第四步 service 管理技巧</strong></p>
-<p>可以随时通过 <code>service XXX start|stop|restart</code> 控制程序状态，还可以通过status查看服务的详细运行信息
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ service XXX status    <span class="comment"># 查看服务状态</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="方法三：借助-rc-local-实现入口"><a href="#方法三：借助-rc-local-实现入口" class="headerlink" title="方法三：借助 rc.local 实现入口"></a>方法三：借助 rc.local 实现入口</h2><p><code>/etc/rc.local</code> 是系统初始化完成后会执行的脚本，可以安全的在里面添加自定义程序的启动入口，这种方法最为常用。
-该文件的格式一般为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
-<p>入口指令需要添加在 <code>exit 0</code> 之前。</p>
+<p></br></p>
+<h3 id="安装-VSCode"><a href="#安装-VSCode" class="headerlink" title="安装 VSCode"></a>安装 VSCode</h3><p>VSCode 是一款由 MicroSoft 开发的文本编辑工具，推荐作为学习 PlantUML 的编辑工具。</p>
+<p>VSCode下载地址 <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p></br></p>
+<h3 id="安装-VSCode-插件"><a href="#安装-VSCode-插件" class="headerlink" title="安装 VSCode 插件"></a>安装 VSCode 插件</h3><p>安装并打开 VScode，之后通过软件侧边栏按钮进入“插件商店”，搜索安装 <strong><em>PlantUML</em></strong> 插件。
+<img src="pic/plug_in.png" alt="plug-in"></p>
+<p></br></p>
+<h3 id="关于-Java"><a href="#关于-Java" class="headerlink" title="关于 Java"></a>关于 Java</h3><p>Java 是运行 PlantUML 的必需条件, 请在您的电脑中安装 Java 环境</p>
+<p>Mac 版 Java 安装包 <a href="https://java.com/zh-CN/download/help/mac_install.html">https://java.com/zh-CN/download/help/mac_install.html</a></p>
+<hr>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><p>打开 VSCode，新建文件，之后立即进行保存操作，文件名需要以 <strong><em>.puml</em></strong> 结尾。
+<img src="pic/new_file.png" alt="new_file"></p>
+<p></br></p>
+<h3 id="编写语法"><a href="#编写语法" class="headerlink" title="编写语法"></a>编写语法</h3><p>在新建的 “*.puml” 文件中，编写合适的语句内容。
+<img src="pic/code.png" alt="code"></p>
+<p></br></p>
+<h3 id="预览图表"><a href="#预览图表" class="headerlink" title="预览图表"></a>预览图表</h3><p>在编辑过程中，随时可以通过组合键 “Option+D” 进行图表预览。
+<img src="pic/graph.png" alt="graph"></p>
+<p></br></p>
+<h3 id="导出图表"><a href="#导出图表" class="headerlink" title="导出图表"></a>导出图表</h3><p>编辑完成后，通过组合键 “command+shift+P”，调出 VSCode 命令行。
+在命令行中模糊输入“uml”，并选择“PlantUML: 导出光标位置图表”。
+<img src="pic/shell.png" alt="shell">
+之后立即选择所需要的图表格式，通常我们总会使用 “png” 格式。
+<img src="pic/export.png" alt="export"></p>
+<p>待程序执行成功后，就可以在此源文件（“.puml”文件）的根目录处，得到对应的图表。</p>
+<hr>
+<h2 id="在线编辑器"><a href="#在线编辑器" class="headerlink" title="在线编辑器"></a>在线编辑器</h2><p>若对 VSCode 操作不熟悉，也可以通过在线工具进行编辑和预览。</p>
+<p><a href="http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000">http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000</a></p>
+<p></br></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></br></h2><p><em>欢迎与 <strong>@大钳子</strong> 交流关于 plantuml 的使用方法</em></p>
+<p><em>2020-10-19</em></p>
+<p><em>in Rockontrol</em></p>
 
       
     </div>
@@ -435,7 +448,7 @@
           
             <a href="/tags/原创/" rel="tag"># 原创</a>
           
-            <a href="/tags/LINUX/" rel="tag"># LINUX</a>
+            <a href="/tags/效率工具/" rel="tag"># 效率工具</a>
           
         </div>
       
@@ -448,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/04/python-getip/" rel="next" title="Python 优雅的获取本机 IP 地址">
-                <i class="fa fa-chevron-left"></i> Python 优雅的获取本机 IP 地址
+              <a href="/2018/05/05/Coursera学习总结-北大《操作系统与虚拟化安全》/" rel="next" title="Coursera学习总结--北大《操作系统与虚拟化安全》">
+                <i class="fa fa-chevron-left"></i> Coursera学习总结--北大《操作系统与虚拟化安全》
               </a>
             
           </div>
@@ -457,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/10/KNX系统语音网关/" rel="prev" title="KNX系统语音网关">
-                KNX系统语音网关 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -619,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一：借助-systemd-工具管理"><span class="nav-number">1.</span> <span class="nav-text">方法一：借助 systemd 工具管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二：借助-init-d-实现"><span class="nav-number">2.</span> <span class="nav-text">方法二：借助 init.d 实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法三：借助-rc-local-实现入口"><span class="nav-number">3.</span> <span class="nav-text">方法三：借助 rc.local 实现入口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-PlantUML"><span class="nav-number">1.1.</span> <span class="nav-text">关于 PlantUML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PlantUML-图表类型及语法大全"><span class="nav-number">1.1.1.</span> <span class="nav-text">PlantUML 图表类型及语法大全</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-VSCode"><span class="nav-number">1.2.</span> <span class="nav-text">安装 VSCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-VSCode-插件"><span class="nav-number">1.3.</span> <span class="nav-text">安装 VSCode 插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-Java"><span class="nav-number">1.4.</span> <span class="nav-text">关于 Java</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始使用"><span class="nav-number">2.</span> <span class="nav-text">开始使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建文件"><span class="nav-number">2.1.</span> <span class="nav-text">创建文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写语法"><span class="nav-number">2.2.</span> <span class="nav-text">编写语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预览图表"><span class="nav-number">2.3.</span> <span class="nav-text">预览图表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导出图表"><span class="nav-number">2.4.</span> <span class="nav-text">导出图表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线编辑器"><span class="nav-number">3.</span> <span class="nav-text">在线编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text"></span></a></li></ol></div>
             
 
           </div>
@@ -796,9 +805,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/01/04/Linux-autostart/';
-          this.page.identifier = '2018/01/04/Linux-autostart/';
-          this.page.title = 'Linux 开机自启程序';
+          this.page.url = 'http://yoursite.com/2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/';
+          this.page.identifier = '2020/10/20/使用VSCode完成图表绘制-PlantUML使用介绍/';
+          this.page.title = '使用VSCode完成图表绘制-PlantUML使用介绍';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://truegate.disqus.com/embed.js';
