@@ -87,16 +87,16 @@
 <meta property="og:site_name" content="年华易逝 活在当下">
 <meta property="og:description" content="消息队列（Message Queue）已然发展成为云计算中间件的重要组件，它具有低耦合、可靠投递、广播、流量控制、最终一致性等一系列特点。 本文主要站在产品角度，探讨了消息队列常用的术语、应用场景以及成熟的中间件解决方案。最后以 AWS 为例，分析了云计算平台的消息中间件产品。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://chuantu.biz/t6/289/1524123900x-1404750322.png">
-<meta property="og:image" content="http://chuantu.biz/t6/289/1524123928x-1404750322.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/传统串行处理.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/传统并行处理.png">
 <meta property="og:image" content="http://chuantu.biz/t6/289/1524123970x-1404750322.png">
 <meta property="og:image" content="http://chuantu.biz/t6/289/1524124000x-1404750322.png">
 <meta property="og:image" content="http://chuantu.biz/t6/289/1524124018x-1404750322.png">
-<meta property="og:updated_time" content="2018-04-20T01:41:59.000Z">
+<meta property="og:updated_time" content="2020-10-20T07:27:54.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="消息中间件产品知识">
 <meta name="twitter:description" content="消息队列（Message Queue）已然发展成为云计算中间件的重要组件，它具有低耦合、可靠投递、广播、流量控制、最终一致性等一系列特点。 本文主要站在产品角度，探讨了消息队列常用的术语、应用场景以及成熟的中间件解决方案。最后以 AWS 为例，分析了云计算平台的消息中间件产品。">
-<meta name="twitter:image" content="http://chuantu.biz/t6/289/1524123900x-1404750322.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/17/消息队列产品知识/传统串行处理.png">
 
 
 
@@ -376,33 +376,32 @@
 <a id="more"></a>
 <h1 id="消息中间件产品知识"><a href="#消息中间件产品知识" class="headerlink" title="消息中间件产品知识"></a>消息中间件产品知识</h1><h2 id="基本概念和简单原理"><a href="#基本概念和简单原理" class="headerlink" title="基本概念和简单原理"></a>基本概念和简单原理</h2><p>消息队列（Message Queue）是实现进程间或同一进程的不同线程间通信的方式。消息队列提供了异步的通信实现，发送者和使用者无需知道彼此的位置信息，即可独立处理消息。队列中的消息来自于发送者，可以驻留在内存或磁盘上，直到被使用者消费。
 消息队列中间件是分布式系统的重要组件，已经逐渐成为企业 IT 系统内部通信的核心手段，它具有低耦合、可靠投递、广播、流量控制、最终一致性等一系列功能，是异步 RPC 的主要手段之一。</p>
-<p>消息队列常用术语：
-<strong>Broker</strong> 概念来自于 Apache ActiveMQ，可以理解为消息队列服务器，主要实现消息路由和暂存等功能
-<strong>消息生产者 Producer</strong> 向队列发送消息的应用程序
-<strong>消息消费者 Consumer</strong> 从队列接收消息的应用程序
-<strong>点对点模型 P2P</strong> 也可称作“生产消费模式”，在该模型下由生产者向队列发送消息，消费者从队列接收消息，并会在成功处理后返回消费签收确认（Acknowledge），系统可以有多个消费者，但每条消息只能被一个消费者消费，消息一旦被消费，便不再存在队列中。生产者和消费者没有时间上的依赖关系，生产者发送消息后，无论消费者有没有在运行，都不影响消息的后续消费。</p>
+<h2 id="消息队列常用术语"><a href="#消息队列常用术语" class="headerlink" title="消息队列常用术语"></a>消息队列常用术语</h2><p><strong>Broker</strong> 概念来自于 Apache ActiveMQ，可以理解为消息队列服务器，主要实现消息路由和暂存等功能</p>
+<p><strong>消息生产者 Producer</strong> 向队列发送消息的应用程序</p>
+<p><strong>消息消费者 Consumer</strong> 从队列接收消息的应用程序</p>
+<p><strong>点对点模型 P2P</strong> 也可称作“生产消费模式”，在该模型下由生产者向队列发送消息，消费者从队列接收消息，并会在成功处理后返回消费签收确认（Acknowledge），系统可以有多个消费者，但每条消息只能被一个消费者消费，消息一旦被消费，便不再存在队列中。生产者和消费者没有时间上的依赖关系，生产者发送消息后，无论消费者有没有在运行，都不影响消息的后续消费。</p>
 <blockquote>
 <p>P2P 模型特点：单一消费者、消费应答机制、无时间依赖关系</p>
 </blockquote>
-<p><strong>发布者 Publisher</strong> 在发布订阅模型中，对消息生产者的称呼
-<strong>订阅者 Subscriber</strong> 在发布订阅模型中，对消息消费者的称呼
-<strong>话题 Topic</strong> 在发布订阅模型中，用于实现发布者和订阅者消息交换的标识，所有订阅了 Topic 的订阅者都可以收到对应的 Topic 消息
-<strong>发布订阅模型 Pub/Sub</strong> 也可称作“观察者模式”，支持了发布者和多个订阅者通过特定的话题（Topic）实现数据交换，当发布者发布（Publish） 一条 Topic 信息时，所有订阅（Subscribe）了该话题的订阅者都会接收到这条消息。消费者必须先订阅后才能消费发布者的消息，为了消费消息，订阅者必须保持运行的状态。</p>
+<p><strong>发布者 Publisher</strong> 在发布订阅模型中，对消息生产者的称呼</p>
+<p><strong>订阅者 Subscriber</strong> 在发布订阅模型中，对消息消费者的称呼</p>
+<p><strong>话题 Topic</strong> 在发布订阅模型中，用于实现发布者和订阅者消息交换的标识，所有订阅了 Topic 的订阅者都可以收到对应的 Topic 消息</p>
+<p><strong>发布订阅模型 Pub/Sub</strong> 也可称作“观察者模式”，支持了发布者和多个订阅者通过特定的话题（Topic）实现数据交换，当发布者发布（Publish） 一条 Topic 信息时，所有订阅（Subscribe）了该话题的订阅者都会接收到这条消息。消费者必须先订阅后才能消费发布者的消息，为了消费消息，订阅者必须保持运行的状态。</p>
 <blockquote>
 <p>Pub/Sub 模型特点：多个消费者、无消费应答、有时间依赖关系</p>
 </blockquote>
-<p><strong>消息的顺序性保证</strong> 生产消费模式下，利用 FIFO 先进先出的特性，可以保证消息的顺序性
-<strong>消息的 ACK 确认机制</strong> 生产消费模式提供了消息的 Acknowledge 机制，可以保证消息不丢失。当消费者确认消息处理完成后，发送一个 ACK 给消息队列，此时消息队列可以删除这个消息。如果消费者宕机/关闭，没有发送 ACK，消息队列将会把消息发送给其他消费者重新处理。
-<strong>消息的持久化</strong> 消息的持久化，对于一些关键的核心业务来说是非常重要的，启用消息持久化后，消息队列宕机重启后，消息可以从持久化存储恢复，消息不丢失，可以继续消费处理。
-<strong>消息的同步收发</strong> 消息同步发送时，发送方需要等待接收方的 ACK 确认，在收到 ACK 之前发送方将一直处于阻塞状态；消息接收方以同步方式（Pull）接收时，如果队列中为空，此时接收将处于同步阻塞状态，会一直等待，直到消息的到达。
-<strong>消息的异步收发</strong> 消息异步发送时，发送方不需要等待 ACK 确认；异步接收消息，消息队列以 Push 方式触发消费者接受消息。
-<strong>消息的事务支持</strong> 消息的收发处理支持事务管理，在任务中心场景中，一次处理可能涉及多个消息的接收、处理，这处于同一个事务范围，当事务中一个消息处理失败时，事务回滚，消息重新回到队列中。</p>
+<p><strong>消息的顺序性保证</strong> 生产消费模式下，利用 FIFO 先进先出的特性，可以保证消息的顺序性</p>
+<p><strong>消息的 ACK 确认机制</strong> 生产消费模式提供了消息的 Acknowledge 机制，可以保证消息不丢失。当消费者确认消息处理完成后，发送一个 ACK 给消息队列，此时消息队列可以删除这个消息。如果消费者宕机/关闭，没有发送 ACK，消息队列将会把消息发送给其他消费者重新处理</p>
+<p><strong>消息的持久化</strong> 消息的持久化，对于一些关键的核心业务来说是非常重要的，启用消息持久化后，消息队列宕机重启后，消息可以从持久化存储恢复，消息不丢失，可以继续消费处理</p>
+<p><strong>消息的同步收发</strong> 消息同步发送时，发送方需要等待接收方的 ACK 确认，在收到 ACK 之前发送方将一直处于阻塞状态；消息接收方以同步方式（Pull）接收时，如果队列中为空，此时接收将处于同步阻塞状态，会一直等待，直到消息的到达</p>
+<p><strong>消息的异步收发</strong> 消息异步发送时，发送方不需要等待 ACK 确认；异步接收消息，消息队列以 Push 方式触发消费者接受消息</p>
+<p><strong>消息的事务支持</strong> 消息的收发处理支持事务管理，在任务中心场景中，一次处理可能涉及多个消息的接收、处理，这处于同一个事务范围，当事务中一个消息处理失败时，事务回滚，消息重新回到队列中</p>
 <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><h3 id="提高吞吐量"><a href="#提高吞吐量" class="headerlink" title="提高吞吐量"></a>提高吞吐量</h3><p>在特定的一些业务场景下，消息队列的异步处理机制，可以降低业务请求的响应时间，提高吞吐量。</p>
 <p><strong><em>场景举例：用户注册流程，注册成功后，发送注册邮件和注册短信</em></strong></p>
 <p>传统串行处理
-<img src="http://chuantu.biz/t6/289/1524123900x-1404750322.png" alt="传统串行处理">
+<img src="传统串行处理.png" alt="传统串行处理">
 传统并行处理
-<img src="http://chuantu.biz/t6/289/1524123928x-1404750322.png" alt="传统并行处理">
+<img src="传统并行处理.png" alt="传统并行处理">
 引入消息队列，将一部分非必须的业务逻辑采用异步处理，改造后的架构如下：
 <img src="http://chuantu.biz/t6/289/1524123970x-1404750322.png" alt="消息队列-提高吞吐">
 通过将发送邮件、发送短信功能的异步处理，可以将注册流程的响应时间提升到 55ms。</p>
@@ -598,7 +597,7 @@ ActiveMQ 的主要特性有：</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -609,7 +608,7 @@ ActiveMQ 的主要特性有：</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -620,7 +619,7 @@ ActiveMQ 的主要特性有：</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -670,7 +669,7 @@ ActiveMQ 的主要特性有：</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#消息中间件产品知识"><span class="nav-number">1.</span> <span class="nav-text">消息中间件产品知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念和简单原理"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念和简单原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">1.2.</span> <span class="nav-text">应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提高吞吐量"><span class="nav-number">1.2.1.</span> <span class="nav-text">提高吞吐量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务解耦"><span class="nav-number">1.2.2.</span> <span class="nav-text">业务解耦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流量削峰"><span class="nav-number">1.2.3.</span> <span class="nav-text">流量削峰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广播"><span class="nav-number">1.2.4.</span> <span class="nav-text">广播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最终一致性"><span class="nav-number">1.2.5.</span> <span class="nav-text">最终一致性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的消息中间件"><span class="nav-number">1.3.</span> <span class="nav-text">常用的消息中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ActiveMQ"><span class="nav-number">1.3.1.</span> <span class="nav-text">ActiveMQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ"><span class="nav-number">1.3.2.</span> <span class="nav-text">RabbitMQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kafka"><span class="nav-number">1.3.3.</span> <span class="nav-text">Kafka</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-消息队列产品介绍"><span class="nav-number">1.4.</span> <span class="nav-text">Amazon 消息队列产品介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Amazon-MQ"><span class="nav-number">1.4.1.</span> <span class="nav-text">Amazon MQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amazon-SQS"><span class="nav-number">1.4.2.</span> <span class="nav-text">Amazon SQS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amazon-SNS"><span class="nav-number">1.4.3.</span> <span class="nav-text">Amazon SNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人理解"><span class="nav-number">1.4.4.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.5.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#消息中间件产品知识"><span class="nav-number">1.</span> <span class="nav-text">消息中间件产品知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念和简单原理"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念和简单原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消息队列常用术语"><span class="nav-number">1.2.</span> <span class="nav-text">消息队列常用术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">1.3.</span> <span class="nav-text">应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提高吞吐量"><span class="nav-number">1.3.1.</span> <span class="nav-text">提高吞吐量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务解耦"><span class="nav-number">1.3.2.</span> <span class="nav-text">业务解耦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流量削峰"><span class="nav-number">1.3.3.</span> <span class="nav-text">流量削峰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广播"><span class="nav-number">1.3.4.</span> <span class="nav-text">广播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最终一致性"><span class="nav-number">1.3.5.</span> <span class="nav-text">最终一致性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的消息中间件"><span class="nav-number">1.4.</span> <span class="nav-text">常用的消息中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ActiveMQ"><span class="nav-number">1.4.1.</span> <span class="nav-text">ActiveMQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ"><span class="nav-number">1.4.2.</span> <span class="nav-text">RabbitMQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kafka"><span class="nav-number">1.4.3.</span> <span class="nav-text">Kafka</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amazon-消息队列产品介绍"><span class="nav-number">1.5.</span> <span class="nav-text">Amazon 消息队列产品介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Amazon-MQ"><span class="nav-number">1.5.1.</span> <span class="nav-text">Amazon MQ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amazon-SQS"><span class="nav-number">1.5.2.</span> <span class="nav-text">Amazon SQS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amazon-SNS"><span class="nav-number">1.5.3.</span> <span class="nav-text">Amazon SNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人理解"><span class="nav-number">1.5.4.</span> <span class="nav-text">个人理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.6.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -694,7 +693,7 @@ ActiveMQ 的主要特性有：</p>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-superpowers"></i>
   </span>
